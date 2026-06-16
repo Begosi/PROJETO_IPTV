@@ -3,6 +3,7 @@ import { ArrowLeft, Search, Loader2, Play, Tv } from 'lucide-react';
 import Hls from 'hls.js';
 import mpegts from 'mpegts.js';
 import { XtreamService } from '../services/xtream';
+import { getProxiedUrl, isElectron } from '../utils/url';
 import './Catalog.css';
 
 const BRANDS = [
@@ -598,10 +599,26 @@ function LivePreviewPlayer({ url, title, onExpand }) {
     const startPlay = async () => {
       try {
         if (isHls && Hls.isSupported()) {
-          hls = new Hls({
+          const hlsConfig = {
             maxMaxBufferLength: 10,
-          });
-          hls.loadSource(url);
+          };
+          if (!isElectron) {
+            class CustomLoader extends Hls.DefaultConfig.loader {
+              constructor(config) {
+                super(config);
+                const originalLoad = this.load.bind(this);
+                this.load = function(context, config, callbacks) {
+                  if (context && context.url) {
+                    context.url = getProxiedUrl(context.url);
+                  }
+                  originalLoad(context, config, callbacks);
+                };
+              }
+            }
+            hlsConfig.loader = CustomLoader;
+          }
+          hls = new Hls(hlsConfig);
+          hls.loadSource(getProxiedUrl(url));
           hls.attachMedia(video);
           hls.on(Hls.Events.MANIFEST_PARSED, () => {
             setIsLoading(false);
@@ -609,6 +626,7 @@ function LivePreviewPlayer({ url, title, onExpand }) {
           });
           hls.on(Hls.Events.ERROR, (event, data) => {
             if (data.fatal) {
+              console.error('Preview HLS Fatal Error:', data);
               setError('Erro de reprodução HLS');
               setIsLoading(false);
             }
@@ -617,18 +635,19 @@ function LivePreviewPlayer({ url, title, onExpand }) {
           flvPlayer = mpegts.createPlayer({
             type: 'mse',
             isLive: true,
-            url: url
+            url: getProxiedUrl(url)
           });
           flvPlayer.attachMediaElement(video);
           flvPlayer.load();
           flvPlayer.play().catch(() => {});
-          flvPlayer.on(mpegts.Events.ERROR, () => {
+          flvPlayer.on(mpegts.Events.ERROR, (errType, detail, info) => {
+            console.error('Preview TS Error:', errType, detail, info);
             setError('Erro de reprodução TS');
             setIsLoading(false);
           });
           setIsLoading(false);
         } else {
-          video.src = url;
+          video.src = getProxiedUrl(url);
           video.addEventListener('loadedmetadata', () => {
             setIsLoading(false);
             video.play().catch(() => {});
