@@ -10,6 +10,15 @@ export function getProxiedUrl(url) {
   if (isElectron) return url;
 
   try {
+    if (url.includes('/api/proxy')) {
+      return url;
+    }
+
+    const isHlsOrSegment = url.includes('.m3u8') || url.includes('.ts') || url.includes('/key/') || url.includes('/live/') || url.includes('stream_type=live');
+    if (isHlsOrSegment) {
+      return `/api/proxy?url=${encodeURIComponent(url)}`;
+    }
+
     const parsed = new URL(url);
     const hostname = parsed.hostname;
     
