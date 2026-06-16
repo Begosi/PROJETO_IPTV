@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, Loader2 } from 'lucide-react';
-import { getProxiedUrl } from '../utils/url';
+import { getProxiedUrl, detectBestConnectionMode } from '../utils/url';
 import './AddListModal.css';
 
 export function AddListModal({ isOpen, onClose, onSave, editList }) {
@@ -105,6 +105,9 @@ export function AddListModal({ isOpen, onClose, onSave, editList }) {
     }
     
     try {
+      if (type === 'xtream' && formData.url) {
+        await detectBestConnectionMode(formData.url);
+      }
       await onSave(payload);
       setFormData({ name: '', url: '', username: '', password: '', file: null });
     } catch (err) {

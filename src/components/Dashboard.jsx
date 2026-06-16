@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Tv, Film, Clapperboard, LogOut, RefreshCw } from 'lucide-react';
+import { detectBestConnectionMode } from '../utils/url';
 import './Dashboard.css';
 
 export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList }) {
@@ -59,6 +60,9 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
       if (active) setIsLoadingCounts(true);
       const listId = activeList.id;
       try {
+        if (activeList.type === 'xtream' && activeList.url) {
+          await detectBestConnectionMode(activeList.url);
+        }
         const { CacheService } = await import('../services/cache.js');
 
         if (activeList.type === 'm3u') {

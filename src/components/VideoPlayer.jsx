@@ -73,7 +73,7 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
           hlsConfig.xhrSetup = (xhr, openUrl) => {
             const originalOpen = xhr.open;
             xhr.open = function(method, url, ...args) {
-              const targetOpenUrl = url.includes('corsproxy.io') ? url : `https://corsproxy.io/?${encodeURIComponent(url)}`;
+              const targetOpenUrl = getProxiedUrl(url);
               return originalOpen.call(this, method, targetOpenUrl, ...args);
             };
           };
