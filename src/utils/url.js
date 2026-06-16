@@ -27,6 +27,13 @@ export function getProxiedUrl(url) {
       } else if (config.mode === 'proxy') {
         return config.proxyTemplate.replace('{url}', encodeURIComponent(url));
       } else if (config.mode === 'direct') {
+        if (window.location.protocol === 'https:' && parsed.protocol === 'http:') {
+          parsed.protocol = 'https:';
+          if (parsed.port === '80') {
+            parsed.port = '';
+          }
+          return parsed.toString();
+        }
         return url;
       }
     }
@@ -53,7 +60,7 @@ export function getProxiedUrl(url) {
  * Detecta dinamicamente a melhor forma de se conectar ao servidor de IPTV.
  * Testa conexão direta por HTTPS (com upgrade de protocolo) e múltiplos proxies de CORS públicos.
  */
-export async function detectBestConnectionMode(url) {
+export async function detectBestConnectionMode(url, username = '', password = '') {
   if (!url || isElectron) return { mode: 'direct' };
 
   try {
@@ -79,8 +86,11 @@ export async function detectBestConnectionMode(url) {
     directHttpsUrl.protocol = 'https:';
     if (directHttpsUrl.port === '80') directHttpsUrl.port = '';
 
-    // Endpoint de teste no Xtream Codes
-    const testUrlDirect = `${directHttpsUrl.origin}/player_api.php`;
+    // Endpoint de teste no Xtream Codes com credenciais (caso existam) para garantir CORS correto de 200 OK
+    let testUrlDirect = `${directHttpsUrl.origin}/player_api.php`;
+    if (username && password) {
+      testUrlDirect += `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+    }
 
     try {
       console.log(`[ProxyDetector] Testando conexão HTTPS direta: ${testUrlDirect}`);
@@ -102,8 +112,12 @@ export async function detectBestConnectionMode(url) {
     ];
 
     for (const proxy of proxies) {
-      // Usamos a URL de teste Xtream (em HTTP ou HTTPS conforme original)
-      const testUrlProxied = proxy.template.replace('{url}', encodeURIComponent(`${parsed.origin}/player_api.php`));
+      // Usamos a URL de teste Xtream (em HTTP ou HTTPS conforme original) com credenciais para evitar 404/erros do provedor
+      let targetTestUrl = `${parsed.origin}/player_api.php`;
+      if (username && password) {
+        targetTestUrl += `?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`;
+      }
+      const testUrlProxied = proxy.template.replace('{url}', encodeURIComponent(targetTestUrl));
       try {
         console.log(`[ProxyDetector] Testando proxy ${proxy.name}: ${testUrlProxied}`);
         const res = await fetch(testUrlProxied, { method: 'GET' });
