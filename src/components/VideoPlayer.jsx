@@ -93,11 +93,67 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
         });
         let mediaErrorRetries = 0;
         let networkErrorRetries = 0;
+        let tokenRefreshRetries = 0;
 
         hls.on(Hls.Events.ERROR, (event, data) => {
           if (data.fatal) {
             console.error('HLS Fatal Error:', data);
             if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+              // Se for 404/403 num segmento ou manifest, o token do provedor expirou
+              // Recriamos o player do zero para obter novo token do balanceador
+              const is404or403 = data.networkDetails?.status === 404 || data.networkDetails?.status === 403 || data.response?.code === 404;
+              const isTokenExpiredError = is404or403 || 
+                data.details === 'levelLoadError' || 
+                data.details === 'manifestParsingError' ||
+                data.details === 'manifestLoadError';
+              
+              if (isTokenExpiredError && tokenRefreshRetries < 3) {
+                tokenRefreshRetries++;
+                console.warn(`[HLS] Token expirado detectado (${data.details}). Renovando stream ${tokenRefreshRetries}/3...`);
+                setIsLoading(true);
+                
+                // Destroi instância atual
+                hls.destroy();
+                
+                // Recria com nova URL após breve delay
+                setTimeout(() => {
+                  // Recria config
+                  const newHlsConfig = { maxMaxBufferLength: 30 };
+                  if (!isElectron) {
+                    class RefreshLoader extends Hls.DefaultConfig.loader {
+                      constructor(config) {
+                        super(config);
+                        const originalLoad = this.load.bind(this);
+                        this.load = function(context, cfg, callbacks) {
+                          if (context && context.url) {
+                            context.url = getProxiedUrl(context.url);
+                          }
+                          originalLoad(context, cfg, callbacks);
+                        };
+                      }
+                    }
+                    newHlsConfig.loader = RefreshLoader;
+                  }
+                  hls = new Hls(newHlsConfig);
+                  // Usa URL original para forçar re-autenticação com novo token
+                  hls.loadSource(getProxiedUrl(url));
+                  hls.attachMedia(video);
+                  hls.on(Hls.Events.MANIFEST_PARSED, () => {
+                    setIsLoading(false);
+                    setError(null);
+                    video.play().catch(() => {});
+                  });
+                  hls.on(Hls.Events.ERROR, (ev2, d2) => {
+                    if (d2.fatal && d2.type === Hls.ErrorTypes.NETWORK_ERROR && tokenRefreshRetries >= 3) {
+                      setError('Transmissão indisponível. O provedor bloqueou a conexão de servidor.');
+                      setIsLoading(false);
+                    }
+                  });
+                }, 1500);
+                return;
+              }
+              
+              // Fallback: tentativa simples de retomar carga
               if (networkErrorRetries < 2) {
                 networkErrorRetries++;
                 console.warn(`Erro de rede fatal HLS. Tentando recuperar ${networkErrorRetries}/2...`);

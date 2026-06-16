@@ -627,8 +627,40 @@ function LivePreviewPlayer({ url, title, onExpand }) {
           hls.on(Hls.Events.ERROR, (event, data) => {
             if (data.fatal) {
               console.error('Preview HLS Fatal Error:', data);
-              setError('Erro de reprodução HLS');
-              setIsLoading(false);
+              const is404 = data.networkDetails?.status === 404 || data.response?.code === 404;
+              const isTokenError = is404 || data.details === 'levelLoadError' || data.details === 'manifestParsingError' || data.details === 'manifestLoadError';
+              
+              if (isTokenError) {
+                // Token expirado - recria player para obter novo token
+                console.warn('[Preview HLS] Token expirado, renovando...');
+                hls.destroy();
+                setTimeout(() => {
+                  const newConfig = { maxMaxBufferLength: 10 };
+                  if (!isElectron) {
+                    class RefreshLoader extends Hls.DefaultConfig.loader {
+                      constructor(c) {
+                        super(c);
+                        const orig = this.load.bind(this);
+                        this.load = (ctx, cfg, cbs) => {
+                          if (ctx && ctx.url) ctx.url = getProxiedUrl(ctx.url);
+                          orig(ctx, cfg, cbs);
+                        };
+                      }
+                    }
+                    newConfig.loader = RefreshLoader;
+                  }
+                  hls = new Hls(newConfig);
+                  hls.loadSource(getProxiedUrl(url));
+                  hls.attachMedia(video);
+                  hls.on(Hls.Events.MANIFEST_PARSED, () => { setIsLoading(false); video.play().catch(() => {}); });
+                  hls.on(Hls.Events.ERROR, (_, d) => {
+                    if (d.fatal) { setError('Erro de reprodução HLS'); setIsLoading(false); }
+                  });
+                }, 1500);
+              } else {
+                setError('Erro de reprodução HLS');
+                setIsLoading(false);
+              }
             }
           });
         } else if (mpegts.isSupported() && isTs) {
