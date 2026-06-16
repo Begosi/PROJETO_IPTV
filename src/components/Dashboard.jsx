@@ -61,7 +61,7 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
       const listId = activeList.id;
       try {
         if (activeList.type === 'xtream' && activeList.url) {
-          await detectBestConnectionMode(activeList.url);
+          await detectBestConnectionMode(activeList.url, activeList.username, activeList.password);
         }
         const { CacheService } = await import('../services/cache.js');
 

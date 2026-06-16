@@ -68,15 +68,21 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
         const hlsConfig = {
           maxMaxBufferLength: 30,
         };
-        // Em navegadores (Vercel/Web), interceptamos todas as requisições XHR para passar pelo proxy de CORS
+        // Em navegadores (Vercel/Web), interceptamos todas as requisições XHR do HLS.js para passar pela reescrita inteligente de URL
         if (!isElectron) {
-          hlsConfig.xhrSetup = (xhr, openUrl) => {
-            const originalOpen = xhr.open;
-            xhr.open = function(method, url, ...args) {
-              const targetOpenUrl = getProxiedUrl(url);
-              return originalOpen.call(this, method, targetOpenUrl, ...args);
-            };
-          };
+          class CustomLoader extends Hls.DefaultConfig.loader {
+            constructor(config) {
+              super(config);
+              const originalLoad = this.load.bind(this);
+              this.load = function(context, config, callbacks) {
+                if (context && context.url) {
+                  context.url = getProxiedUrl(context.url);
+                }
+                originalLoad(context, config, callbacks);
+              };
+            }
+          }
+          hlsConfig.loader = CustomLoader;
         }
         hls = new Hls(hlsConfig);
         hls.loadSource(getProxiedUrl(url));

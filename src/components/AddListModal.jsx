@@ -106,7 +106,7 @@ export function AddListModal({ isOpen, onClose, onSave, editList }) {
     
     try {
       if (type === 'xtream' && formData.url) {
-        await detectBestConnectionMode(formData.url);
+        await detectBestConnectionMode(formData.url, formData.username, formData.password);
       }
       await onSave(payload);
       setFormData({ name: '', url: '', username: '', password: '', file: null });

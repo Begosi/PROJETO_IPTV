@@ -74,8 +74,13 @@ export async function detectBestConnectionMode(url, username = '', password = ''
       const parsedCache = JSON.parse(cached);
       // TTL de 1 hora
       if (parsedCache.timestamp && Date.now() - parsedCache.timestamp < 3600000) {
-        console.log(`[ProxyDetector] Usando configuração cacheada para ${hostname}:`, parsedCache.mode);
-        return parsedCache;
+        // Ignora cache 'direct' se estivermos em HTTPS (pois 'direct' causará Mixed Content)
+        if (parsedCache.mode === 'direct' && window.location.protocol === 'https:') {
+          console.log(`[ProxyDetector] Ignorando cache 'direct' para ${hostname} pois a página está em HTTPS`);
+        } else {
+          console.log(`[ProxyDetector] Usando configuração cacheada para ${hostname}:`, parsedCache.mode);
+          return parsedCache;
+        }
       }
     }
 
