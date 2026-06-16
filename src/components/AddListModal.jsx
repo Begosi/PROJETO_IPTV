@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { X, Loader2 } from 'lucide-react';
+import { getProxiedUrl } from '../utils/url';
 import './AddListModal.css';
 
 export function AddListModal({ isOpen, onClose, onSave, editList }) {
@@ -84,7 +85,8 @@ export function AddListModal({ isOpen, onClose, onSave, editList }) {
         if (urlChanged || !editList.content) {
           try {
             payload.url = formData.url;
-            const response = await fetch(formData.url);
+            const targetUrl = getProxiedUrl(formData.url);
+            const response = await fetch(targetUrl);
             if (!response.ok) {
               throw new Error(`O servidor retornou status ${response.status}`);
             }

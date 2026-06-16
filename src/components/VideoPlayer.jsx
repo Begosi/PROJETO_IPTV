@@ -3,6 +3,7 @@ import Hls from 'hls.js';
 import mpegts from 'mpegts.js';
 import { Play, Pause, Maximize, Minimize, PictureInPicture, ArrowLeft, Loader2, AlertCircle, Copy, Check, Terminal } from 'lucide-react';
 import localforage from 'localforage';
+import { getProxiedUrl, isElectron } from '../utils/url';
 import './VideoPlayer.css';
 
 export function VideoPlayer({ url, title, onClose, id, type }) {
@@ -64,10 +65,21 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
       const isTs = url.includes('.ts') || url.includes('stream_type=live') || url.includes('/live/');
 
       if (isHls && Hls.isSupported()) {
-        hls = new Hls({
+        const hlsConfig = {
           maxMaxBufferLength: 30,
-        });
-        hls.loadSource(url);
+        };
+        // Em navegadores (Vercel/Web), interceptamos todas as requisições XHR para passar pelo proxy de CORS
+        if (!isElectron) {
+          hlsConfig.xhrSetup = (xhr, openUrl) => {
+            const originalOpen = xhr.open;
+            xhr.open = function(method, url, ...args) {
+              const targetOpenUrl = url.includes('corsproxy.io') ? url : `https://corsproxy.io/?${encodeURIComponent(url)}`;
+              return originalOpen.call(this, method, targetOpenUrl, ...args);
+            };
+          };
+        }
+        hls = new Hls(hlsConfig);
+        hls.loadSource(getProxiedUrl(url));
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
           setIsLoading(false);
@@ -110,7 +122,7 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
         flvPlayer = mpegts.createPlayer({
             type: 'mse',  
             isLive: true,
-            url: url
+            url: getProxiedUrl(url)
         });
         flvPlayer.attachMediaElement(video);
         flvPlayer.load();
@@ -124,7 +136,7 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
         setIsLoading(false);
       } else {
         // Fallback nativo para MP4, WebM ou Safari
-        video.src = url;
+        video.src = getProxiedUrl(url);
         video.addEventListener('loadedmetadata', () => {
           setIsLoading(false);
           video.play().catch(() => console.log('Autoplay blocked'));

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Tv, Plus, Trash2, Play, Pencil } from 'lucide-react';
+import { getProxiedUrl } from './utils/url';
 import { AddListModal } from './components/AddListModal';
 import { Dashboard } from './components/Dashboard';
 import { Catalog } from './components/Catalog';
@@ -49,7 +50,8 @@ function App() {
 
   const handleRefreshList = async (list) => {
     if (list.type !== 'm3u' || !list.url) return;
-    const response = await fetch(list.url);
+    const targetUrl = getProxiedUrl(list.url);
+    const response = await fetch(targetUrl);
     if (!response.ok) {
       throw new Error(`Servidor respondeu com status ${response.status}`);
     }

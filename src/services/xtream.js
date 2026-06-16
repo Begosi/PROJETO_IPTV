@@ -1,3 +1,5 @@
+import { getProxiedUrl } from '../utils/url';
+
 export class XtreamService {
   constructor(url, username, password) {
     this.baseUrl = url.endsWith('/') ? url.slice(0, -1) : url;
@@ -16,7 +18,8 @@ export class XtreamService {
     }
 
     try {
-      const response = await fetch(url.toString(), {
+      const targetUrl = getProxiedUrl(url.toString());
+      const response = await fetch(targetUrl, {
         method: 'GET'
       });
       if (!response.ok) {
@@ -34,7 +37,8 @@ export class XtreamService {
     const url = new URL(`${this.baseUrl}/player_api.php`);
     url.searchParams.append('username', this.username);
     url.searchParams.append('password', this.password);
-    const res = await fetch(url.toString());
+    const targetUrl = getProxiedUrl(url.toString());
+    const res = await fetch(targetUrl);
     return res.json();
   }
 
