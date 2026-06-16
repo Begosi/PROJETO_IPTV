@@ -7,9 +7,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Configura headers para simular requisição do player/navegador
+    // Configura headers para simular requisição de player de mídia legítimo (evita bloqueios de bot do Cloudflare em datacenters)
     const headers = {
-      'User-Agent': req.headers['user-agent'] || 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'User-Agent': 'VLC/3.0.16',
     };
 
     const response = await fetch(url, {
