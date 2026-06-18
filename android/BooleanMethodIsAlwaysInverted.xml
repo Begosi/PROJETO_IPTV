@@ -1,0 +1,30 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>1129</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge boolean onRequestPermissionsResult(int requestCode, java.lang.String[] permissions, int[] grantResults)" />
+  <problem_class id="BooleanMethodIsAlwaysInverted" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Boolean method is always inverted</problem_class>
+  <hints />
+  <description>Calls to boolean method 'onRequestPermissionsResult()' are always inverted</description>
+  <highlighted_element>onRequestPermissionsResult</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>26</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>1269</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge boolean onActivityResult(int requestCode, int resultCode, android.content.Intent data)" />
+  <problem_class id="BooleanMethodIsAlwaysInverted" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Boolean method is always inverted</problem_class>
+  <hints />
+  <description>Calls to boolean method 'onActivityResult()' are always inverted</description>
+  <highlighted_element>onActivityResult</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>16</length>
+</problem>
+</problems>

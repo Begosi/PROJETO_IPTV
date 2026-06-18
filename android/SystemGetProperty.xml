@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>370</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler java.lang.String readStreamAsString(java.io.InputStream in)" />
+  <problem_class id="SystemGetProperty" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Call to 'System.getProperty(str)' could be simplified</problem_class>
+  <description>Call &lt;code&gt;getProperty&lt;/code&gt; can be simplified for 'line.separator'</description>
+  <highlighted_element>getProperty</highlighted_element>
+  <language>JAVA</language>
+  <offset>42</offset>
+  <length>11</length>
+</problem>
+</problems>

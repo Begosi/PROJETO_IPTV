@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>35</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.ResponseType" />
+  <problem_class id="JavadocLinkAsPlainText" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Link specified as plain text</problem_class>
+  <description>Link specified as plain text</description>
+  <highlighted_element>https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType</highlighted_element>
+  <language>JAVA</language>
+  <offset>11</offset>
+  <length>76</length>
+</problem>
+</problems>

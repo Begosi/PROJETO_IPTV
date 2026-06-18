@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/FileUtils.java</file>
+  <line>56</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="field" FQNAME="com.getcapacitor.FileUtils.Type type" />
+  <problem_class id="NonFinalFieldInEnum" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Non-final field in 'enum'</problem_class>
+  <description>Non-final field &lt;code&gt;type&lt;/code&gt; in enum 'Type'</description>
+  <highlighted_element>type</highlighted_element>
+  <language>JAVA</language>
+  <offset>23</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PermissionState.java</file>
+  <line>16</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="field" FQNAME="com.getcapacitor.PermissionState state" />
+  <problem_class id="NonFinalFieldInEnum" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Non-final field in 'enum'</problem_class>
+  <description>Non-final field &lt;code&gt;state&lt;/code&gt; in enum 'PermissionState'</description>
+  <highlighted_element>state</highlighted_element>
+  <language>JAVA</language>
+  <offset>19</offset>
+  <length>5</length>
+</problem>
+</problems>

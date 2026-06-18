@@ -1,0 +1,57 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable-land-hdpi/splash.png</file>
+  <line>1</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable-land-hdpi/splash.png" />
+  <problem_class id="AndroidLintIconDipSize" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Icon density-independent size validation</problem_class>
+  <hints />
+  <description>&lt;html&gt;The image &lt;code&gt;splash.png&lt;/code&gt; varies significantly in its density-independent (dip) size across the various density versions: drawable-land-hdpi/splash.png: 533x320 dp (800x480 px), drawable-land-mdpi/splash.png: 480x320 dp (480x320 px), drawable-land-xhdpi/splash.png: 640x360 dp (1280x720 px), drawable-land-xxhdpi/splash.png: 533x320 dp (1600x960 px), drawable-land-xxxhdpi/splash.png: 480x320 dp (1920x1280 px)&lt;/html&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable-land-mdpi/splash.png</file>
+  <line>1</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable-land-mdpi/splash.png" />
+  <problem_class id="AndroidLintIconDipSize" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Icon density-independent size validation</problem_class>
+  <hints />
+  <description>&lt;html&gt;The image &lt;code&gt;splash.png&lt;/code&gt; varies significantly in its density-independent (dip) size across the various density versions: drawable-land-hdpi/splash.png: 533x320 dp (800x480 px), drawable-land-mdpi/splash.png: 480x320 dp (480x320 px), drawable-land-xhdpi/splash.png: 640x360 dp (1280x720 px), drawable-land-xxhdpi/splash.png: 533x320 dp (1600x960 px), drawable-land-xxxhdpi/splash.png: 480x320 dp (1920x1280 px)&lt;/html&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable-land-xhdpi/splash.png</file>
+  <line>1</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable-land-xhdpi/splash.png" />
+  <problem_class id="AndroidLintIconDipSize" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Icon density-independent size validation</problem_class>
+  <hints />
+  <description>&lt;html&gt;The image &lt;code&gt;splash.png&lt;/code&gt; varies significantly in its density-independent (dip) size across the various density versions: drawable-land-hdpi/splash.png: 533x320 dp (800x480 px), drawable-land-mdpi/splash.png: 480x320 dp (480x320 px), drawable-land-xhdpi/splash.png: 640x360 dp (1280x720 px), drawable-land-xxhdpi/splash.png: 533x320 dp (1600x960 px), drawable-land-xxxhdpi/splash.png: 480x320 dp (1920x1280 px)&lt;/html&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable-land-xxhdpi/splash.png</file>
+  <line>1</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable-land-xxhdpi/splash.png" />
+  <problem_class id="AndroidLintIconDipSize" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Icon density-independent size validation</problem_class>
+  <hints />
+  <description>&lt;html&gt;The image &lt;code&gt;splash.png&lt;/code&gt; varies significantly in its density-independent (dip) size across the various density versions: drawable-land-hdpi/splash.png: 533x320 dp (800x480 px), drawable-land-mdpi/splash.png: 480x320 dp (480x320 px), drawable-land-xhdpi/splash.png: 640x360 dp (1280x720 px), drawable-land-xxhdpi/splash.png: 533x320 dp (1600x960 px), drawable-land-xxxhdpi/splash.png: 480x320 dp (1920x1280 px)&lt;/html&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/drawable-land-xxxhdpi/splash.png</file>
+  <line>1</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/drawable-land-xxxhdpi/splash.png" />
+  <problem_class id="AndroidLintIconDipSize" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Icon density-independent size validation</problem_class>
+  <hints />
+  <description>&lt;html&gt;The image &lt;code&gt;splash.png&lt;/code&gt; varies significantly in its density-independent (dip) size across the various density versions: drawable-land-hdpi/splash.png: 533x320 dp (800x480 px), drawable-land-mdpi/splash.png: 480x320 dp (480x320 px), drawable-land-xhdpi/splash.png: 640x360 dp (1280x720 px), drawable-land-xxhdpi/splash.png: 533x320 dp (1600x960 px), drawable-land-xxxhdpi/splash.png: 480x320 dp (1920x1280 px)&lt;/html&gt;</description>
+  <highlighted_element />
+  <language />
+</problem>
+</problems>

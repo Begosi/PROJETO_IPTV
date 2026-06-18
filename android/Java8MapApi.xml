@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>1226</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge java.util.Map&lt;java.lang.String,com.getcapacitor.PermissionState&gt; getPermissionStates(com.getcapacitor.Plugin plugin)" />
+  <problem_class id="Java8MapApi" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Simplifiable 'Map' operations</problem_class>
+  <description>Can be replaced with single 'Map.putIfAbsent()' call</description>
+  <highlighted_element>existingResult == null</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>22</length>
+</problem>
+</problems>

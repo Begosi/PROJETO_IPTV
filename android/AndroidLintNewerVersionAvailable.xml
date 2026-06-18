@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/capacitor-cordova-android-plugins/build.gradle</file>
+  <line>47</line>
+  <module>android.capacitor-cordova-android-plugins</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/capacitor-cordova-android-plugins/build.gradle" />
+  <problem_class id="AndroidLintNewerVersionAvailable" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Newer Library Versions Available</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of org.apache.cordova:framework than 14.0.1 is available: 15.0.0&lt;/html&gt;</description>
+  <highlighted_element>&quot;org.apache.cordova:framework:$cordovaAndroidVersion&quot;</highlighted_element>
+  <language>Groovy</language>
+  <offset>19</offset>
+  <length>53</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/settings.gradle</file>
+  <line>2</line>
+  <module>android</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/settings.gradle" />
+  <problem_class id="AndroidLintNewerVersionAvailable" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Newer Library Versions Available</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of org.gradle.toolchains.foojay-resolver-convention than 0.10.0 is available: 1.0.0&lt;/html&gt;</description>
+  <highlighted_element>'0.10.0'</highlighted_element>
+  <language>Groovy</language>
+  <offset>66</offset>
+  <length>8</length>
+</problem>
+</problems>

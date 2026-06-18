@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/cordova/MockCordovaWebViewImpl.java</file>
+  <line>96</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.cordova</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.cordova.MockCordovaWebViewImpl void loadUrlIntoView(java.lang.String url, boolean recreatePlugins)" />
+  <problem_class id="UnnecessaryReturn" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary 'return' statement</problem_class>
+  <description>&lt;code&gt;return&lt;/code&gt; is unnecessary as the last statement in a 'void' method</description>
+  <highlighted_element>return</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>6</length>
+</problem>
+</problems>

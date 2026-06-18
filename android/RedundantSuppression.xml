@@ -1,0 +1,50 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/CapacitorWebView.java</file>
+  <line>50</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.CapacitorWebView boolean dispatchKeyEvent(android.view.KeyEvent event)" />
+  <problem_class id="RedundantSuppression" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Redundant suppression</problem_class>
+  <hints>
+    <hint value="deprecation;JAVA" />
+  </hints>
+  <description>Redundant suppression</description>
+  <highlighted_element>dispatchKeyEvent</highlighted_element>
+  <language>JAVA</language>
+  <offset>19</offset>
+  <length>16</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/FileUtils.java</file>
+  <line>141</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.FileUtils java.lang.String legacyPrimaryPath(java.lang.String pathPart)" />
+  <problem_class id="RedundantSuppression" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Redundant suppression</problem_class>
+  <hints>
+    <hint value="deprecation;JAVA" />
+  </hints>
+  <description>Redundant suppression</description>
+  <highlighted_element>legacyPrimaryPath</highlighted_element>
+  <language>JAVA</language>
+  <offset>26</offset>
+  <length>17</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/util/InternalUtils.java</file>
+  <line>23</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.util.InternalUtils android.content.pm.PackageInfo getPackageInfoLegacy(android.content.pm.PackageManager pm, java.lang.String packageName, long flags)" />
+  <problem_class id="RedundantSuppression" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Redundant suppression</problem_class>
+  <hints>
+    <hint value="deprecation;JAVA" />
+  </hints>
+  <description>Redundant suppression</description>
+  <highlighted_element>getPackageInfoLegacy</highlighted_element>
+  <language>JAVA</language>
+  <offset>31</offset>
+  <length>20</length>
+</problem>
+</problems>

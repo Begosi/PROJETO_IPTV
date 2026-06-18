@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>317</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler java.lang.Object parseJSON(java.lang.String input)" />
+  <problem_class id="NonStrictComparisonCanBeEquality" severity="WEAK WARNING" attribute_key="INFO_ATTRIBUTES">Non-strict inequality '&gt;=' or '&lt;=' can be replaced with '=='</problem_class>
+  <description>Can be replaced with equality</description>
+  <highlighted_element>&lt;=</highlighted_element>
+  <language>JAVA</language>
+  <offset>45</offset>
+  <length>2</length>
+</problem>
+</problems>

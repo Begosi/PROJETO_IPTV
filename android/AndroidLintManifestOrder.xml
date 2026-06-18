@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml</file>
+  <line>41</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+  <problem_class id="AndroidLintManifestOrder" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Incorrect order of elements in manifest</problem_class>
+  <hints />
+  <description>&lt;html&gt;&lt;code&gt;&amp;lt;uses-permission&gt;&lt;/code&gt; tag appears after &lt;code&gt;&amp;lt;application&gt;&lt;/code&gt; tag&lt;/html&gt;</description>
+  <highlighted_element>uses-permission</highlighted_element>
+  <language>XML</language>
+  <offset>5</offset>
+  <length>15</length>
+</problem>
+</problems>

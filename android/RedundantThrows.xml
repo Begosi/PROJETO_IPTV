@@ -1,0 +1,18 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSExport.java</file>
+  <line>151</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSExport java.lang.String getBridgeJS(android.content.Context context)" />
+  <problem_class id="RedundantThrows" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Redundant 'throws' clause</problem_class>
+  <hints>
+    <hint value="JSExportException" />
+  </hints>
+  <description>The declared exception &lt;code&gt;JSExportException&lt;/code&gt; is never thrown</description>
+  <highlighted_element>JSExportException</highlighted_element>
+  <language>JAVA</language>
+  <offset>61</offset>
+  <length>17</length>
+</problem>
+</problems>

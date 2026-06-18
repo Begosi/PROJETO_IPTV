@@ -1,0 +1,184 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/CapConfig.java</file>
+  <line>444</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.CapConfig org.json.JSONObject getObject(java.lang.String key)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSArray.java</file>
+  <line>48</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSArray com.getcapacitor.JSArray from(java.lang.Object array)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>56</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject java.lang.String getString(java.lang.String key, java.lang.String defaultValue)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>69</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject java.lang.Integer getInteger(java.lang.String key, java.lang.Integer defaultValue)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>77</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject java.lang.Boolean getBoolean(java.lang.String key, java.lang.Boolean defaultValue)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>93</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject getJSObject(java.lang.String name)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>110</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject getJSObject(java.lang.String name, com.getcapacitor.JSObject defaultValue)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>118</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject put(java.lang.String key, boolean value)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>126</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject put(java.lang.String key, int value)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>134</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject put(java.lang.String key, long value)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>142</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject put(java.lang.String key, double value)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>150</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject put(java.lang.String key, java.lang.Object value)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>157</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject put(java.lang.String key, java.lang.String value)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/util/PermissionHelper.java</file>
+  <line>85</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.util.PermissionHelper java.lang.String[] getManifestPermissions(android.content.Context context)" />
+  <problem_class id="CatchMayIgnoreException" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Catch block may ignore exception</problem_class>
+  <description>Empty &lt;code&gt;catch&lt;/code&gt; block</description>
+  <highlighted_element>catch</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>5</length>
+</problem>
+</problems>

@@ -1,0 +1,106 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>120</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient void onPermissionRequest(android.webkit.PermissionRequest request)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked call to 'launch(I)' as a member of raw type 'androidx.activity.result.ActivityResultLauncher'</description>
+  <highlighted_element>permissionLauncher.launch</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>25</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>267</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient void onGeolocationPermissionsShowPrompt(java.lang.String origin, android.webkit.GeolocationPermissions.Callback callback)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked call to 'launch(I)' as a member of raw type 'androidx.activity.result.ActivityResultLauncher'</description>
+  <highlighted_element>permissionLauncher.launch</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>25</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>298</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient boolean onShowFileChooser(android.webkit.WebView webView, android.webkit.ValueCallback&lt;android.net.Uri[]&gt; filePathCallback, android.webkit.WebChromeClient.FileChooserParams fileChooserParams)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked call to 'launch(I)' as a member of raw type 'androidx.activity.result.ActivityResultLauncher'</description>
+  <highlighted_element>permissionLauncher.launch</highlighted_element>
+  <language>JAVA</language>
+  <offset>16</offset>
+  <length>25</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>350</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient boolean showImageCapturePicker(android.webkit.ValueCallback&lt;android.net.Uri[]&gt; filePathCallback)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked call to 'launch(I)' as a member of raw type 'androidx.activity.result.ActivityResultLauncher'</description>
+  <highlighted_element>activityLauncher.launch</highlighted_element>
+  <language>JAVA</language>
+  <offset>8</offset>
+  <length>23</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>369</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient boolean showVideoCapturePicker(android.webkit.ValueCallback&lt;android.net.Uri[]&gt; filePathCallback)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked call to 'launch(I)' as a member of raw type 'androidx.activity.result.ActivityResultLauncher'</description>
+  <highlighted_element>activityLauncher.launch</highlighted_element>
+  <language>JAVA</language>
+  <offset>8</offset>
+  <length>23</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>401</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient void showFilePicker(android.webkit.ValueCallback&lt;android.net.Uri[]&gt; filePathCallback, android.webkit.WebChromeClient.FileChooserParams fileChooserParams)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked call to 'launch(I)' as a member of raw type 'androidx.activity.result.ActivityResultLauncher'</description>
+  <highlighted_element>activityLauncher.launch</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>23</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>679</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void notifyListeners(java.lang.String eventName, com.getcapacitor.JSObject data, boolean retainUntilConsumed)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked assignment: 'java.util.concurrent.CopyOnWriteArrayList' to 'java.util.concurrent.CopyOnWriteArrayList&lt;com.getcapacitor.PluginCall&gt;'</description>
+  <highlighted_element>CopyOnWriteArrayList</highlighted_element>
+  <language>JAVA</language>
+  <offset>61</offset>
+  <length>20</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>679</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void notifyListeners(java.lang.String eventName, com.getcapacitor.JSObject data, boolean retainUntilConsumed)" />
+  <problem_class id="UNCHECKED_WARNING" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unchecked warning</problem_class>
+  <description>Unchecked call to 'CopyOnWriteArrayList(Collection&lt;? extends E&gt;)' as a member of raw type 'java.util.concurrent.CopyOnWriteArrayList'</description>
+  <highlighted_element>CopyOnWriteArrayList</highlighted_element>
+  <language>JAVA</language>
+  <offset>61</offset>
+  <length>20</length>
+</problem>
+</problems>

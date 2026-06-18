@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>1199</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge boolean validatePermissions(com.getcapacitor.Plugin plugin, com.getcapacitor.PluginCall savedCall, java.util.Map&lt;java.lang.String,java.lang.Boolean&gt; permissions)" />
+  <problem_class id="StringConcatenationInsideStringBufferAppend" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">String concatenation as argument to 'StringBuilder.append()' call</problem_class>
+  <description>String concatenation as argument to &lt;code&gt;StringBuilder.append()&lt;/code&gt; call</description>
+  <highlighted_element>append</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>905</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void handleRequestPermissionsResult(int requestCode, java.lang.String[] permissions, int[] grantResults)" />
+  <problem_class id="StringConcatenationInsideStringBufferAppend" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">String concatenation as argument to 'StringBuilder.append()' call</problem_class>
+  <description>String concatenation as argument to &lt;code&gt;StringBuilder.append()&lt;/code&gt; call</description>
+  <highlighted_element>append</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>6</length>
+</problem>
+</problems>

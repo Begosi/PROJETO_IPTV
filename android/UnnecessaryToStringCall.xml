@@ -1,0 +1,67 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>356</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge boolean isMinimumWebViewInstalled()" />
+  <problem_class id="UnnecessaryToStringCall" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary call to 'toString()'</problem_class>
+  <description>Unnecessary &lt;code&gt;toString()&lt;/code&gt; call</description>
+  <highlighted_element>toString</highlighted_element>
+  <language>JAVA</language>
+  <offset>91</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>365</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge boolean isMinimumWebViewInstalled()" />
+  <problem_class id="UnnecessaryToStringCall" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary call to 'toString()'</problem_class>
+  <description>Unnecessary &lt;code&gt;toString()&lt;/code&gt; call</description>
+  <highlighted_element>toString</highlighted_element>
+  <language>JAVA</language>
+  <offset>84</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSExport.java</file>
+  <line>91</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSExport java.lang.String getPluginJS(java.util.Collection&lt;com.getcapacitor.PluginHandle&gt; plugins)" />
+  <problem_class id="UnnecessaryToStringCall" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary call to 'toString()'</problem_class>
+  <description>Unnecessary &lt;code&gt;toString()&lt;/code&gt; call</description>
+  <highlighted_element>toString</highlighted_element>
+  <language>JAVA</language>
+  <offset>97</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/MessageHandler.java</file>
+  <line>113</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.MessageHandler void sendResponseMessage(com.getcapacitor.PluginCall call, com.getcapacitor.PluginResult successResult, com.getcapacitor.PluginResult errorResult)" />
+  <problem_class id="UnnecessaryToStringCall" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary call to 'toString()'</problem_class>
+  <description>Unnecessary &lt;code&gt;toString()&lt;/code&gt; call</description>
+  <highlighted_element>toString</highlighted_element>
+  <language>JAVA</language>
+  <offset>61</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/AssetUtil.java</file>
+  <line>309</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.AssetUtil java.io.File getTmpFile(java.lang.String name)" />
+  <problem_class id="UnnecessaryToStringCall" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary call to 'toString()'</problem_class>
+  <description>Unnecessary &lt;code&gt;toString()&lt;/code&gt; call</description>
+  <highlighted_element>toString</highlighted_element>
+  <language>JAVA</language>
+  <offset>29</offset>
+  <length>8</length>
+</problem>
+</problems>

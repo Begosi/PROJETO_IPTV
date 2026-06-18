@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>146</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder setUrlParams(com.getcapacitor.JSObject params, boolean shouldEncode)" />
+  <problem_class id="AccessStaticViaInstance" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Access static member via instance reference</problem_class>
+  <description>Static member 'com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder.addUrlParam(java.lang.StringBuilder, java.lang.String, java.lang.String, boolean)' accessed via instance reference</description>
+  <highlighted_element>this.addUrlParam</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>16</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>159</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder setUrlParams(com.getcapacitor.JSObject params, boolean shouldEncode)" />
+  <problem_class id="AccessStaticViaInstance" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Access static member via instance reference</problem_class>
+  <description>Static member 'com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder.addUrlParam(java.lang.StringBuilder, java.lang.String, java.lang.String, boolean)' accessed via instance reference</description>
+  <highlighted_element>this.addUrlParam</highlighted_element>
+  <language>JAVA</language>
+  <offset>20</offset>
+  <length>16</length>
+</problem>
+</problems>

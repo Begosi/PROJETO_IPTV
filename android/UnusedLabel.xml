@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/UriMatcher.java</file>
+  <line>146</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.UriMatcher java.lang.Object match(android.net.Uri uri)" />
+  <problem_class id="UnusedLabel" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused label</problem_class>
+  <description>Unused label &lt;code&gt;which_switch&lt;/code&gt;</description>
+  <highlighted_element>which_switch</highlighted_element>
+  <language>JAVA</language>
+  <offset>16</offset>
+  <length>12</length>
+</problem>
+</problems>

@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>40</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject fromJSONObject(org.json.JSONObject obj)" />
+  <problem_class id="ToArrayCallWithZeroLengthArrayArgument" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'Collection.toArray()' call style</problem_class>
+  <description>Call to &lt;code&gt;toArray()&lt;/code&gt; with pre-sized array argument 'new String[keys.size()]'</description>
+  <highlighted_element>toArray</highlighted_element>
+  <language>JAVA</language>
+  <offset>38</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSObject.java</file>
+  <line>108</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSObject com.getcapacitor.JSObject getJSObject(java.lang.String name, com.getcapacitor.JSObject defaultValue)" />
+  <problem_class id="ToArrayCallWithZeroLengthArrayArgument" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'Collection.toArray()' call style</problem_class>
+  <description>Call to &lt;code&gt;toArray()&lt;/code&gt; with pre-sized array argument 'new String[keys.size()]'</description>
+  <highlighted_element>toArray</highlighted_element>
+  <language>JAVA</language>
+  <offset>59</offset>
+  <length>7</length>
+</problem>
+</problems>

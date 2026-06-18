@@ -1,0 +1,80 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>141</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="field" FQNAME="com.getcapacitor.Bridge taskHandler" />
+  <problem_class id="UnusedAssignment" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused assignment</problem_class>
+  <description>Variable &lt;code&gt;taskHandler&lt;/code&gt; initializer &lt;code&gt;null&lt;/code&gt; is redundant</description>
+  <highlighted_element>null</highlighted_element>
+  <language>JAVA</language>
+  <offset>34</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/CapConfig.java</file>
+  <line>542</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.CapConfig java.util.Map&lt;java.lang.String,com.getcapacitor.PluginConfig&gt; deserializePluginsConfig(org.json.JSONObject pluginsConfig)" />
+  <problem_class id="UnusedAssignment" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused assignment</problem_class>
+  <description>Variable &lt;code&gt;value&lt;/code&gt; initializer &lt;code&gt;null&lt;/code&gt; is redundant</description>
+  <highlighted_element>null</highlighted_element>
+  <language>JAVA</language>
+  <offset>31</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/FileUtils.java</file>
+  <line>227</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.FileUtils java.lang.String getCopyFilePath(android.net.Uri uri, android.content.Context context)" />
+  <problem_class id="UnusedAssignment" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused assignment</problem_class>
+  <description>Variable &lt;code&gt;read&lt;/code&gt; initializer &lt;code&gt;0&lt;/code&gt; is redundant</description>
+  <highlighted_element>0</highlighted_element>
+  <language>JAVA</language>
+  <offset>23</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSArray.java</file>
+  <line>32</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSArray java.util.List&lt;E&gt; toList()" />
+  <problem_class id="UnusedAssignment" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused assignment</problem_class>
+  <description>The value &lt;code&gt;this.get(i)&lt;/code&gt; assigned to &lt;code&gt;o&lt;/code&gt; is never used</description>
+  <highlighted_element>o</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSValue.java</file>
+  <line>56</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSValue java.lang.Object toValue(com.getcapacitor.PluginCall call, java.lang.String name)" />
+  <problem_class id="UnusedAssignment" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused assignment</problem_class>
+  <description>Variable &lt;code&gt;value&lt;/code&gt; initializer &lt;code&gt;null&lt;/code&gt; is redundant</description>
+  <highlighted_element>null</highlighted_element>
+  <language>JAVA</language>
+  <offset>23</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/WebViewLocalServer.java</file>
+  <line>640</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.WebViewLocalServer$1 java.io.InputStream handle(android.net.Uri url)" />
+  <problem_class id="UnusedAssignment" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unused assignment</problem_class>
+  <description>Variable &lt;code&gt;stream&lt;/code&gt; initializer &lt;code&gt;null&lt;/code&gt; is redundant</description>
+  <highlighted_element>null</highlighted_element>
+  <language>JAVA</language>
+  <offset>37</offset>
+  <length>4</length>
+</problem>
+</problems>

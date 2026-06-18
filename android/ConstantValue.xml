@@ -1,0 +1,67 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeActivity.java</file>
+  <line>201</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeActivity void onNewIntent(android.content.Intent intent)" />
+  <problem_class id="ConstantValue" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Constant values</problem_class>
+  <description>Condition &lt;code&gt;intent == null&lt;/code&gt; is always &lt;code&gt;false&lt;/code&gt; when reached</description>
+  <highlighted_element>intent == null</highlighted_element>
+  <language>JAVA</language>
+  <offset>35</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/FileUtils.java</file>
+  <line>239</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.FileUtils java.lang.String getCopyFilePath(android.net.Uri uri, android.content.Context context)" />
+  <problem_class id="ConstantValue" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Constant values</problem_class>
+  <description>Condition &lt;code&gt;cursor != null&lt;/code&gt; is always &lt;code&gt;true&lt;/code&gt;</description>
+  <highlighted_element>cursor != null</highlighted_element>
+  <language>JAVA</language>
+  <offset>16</offset>
+  <length>14</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/FileUtils.java</file>
+  <line>282</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.FileUtils java.lang.String getPathToNonPrimaryVolume(android.content.Context context, java.lang.String tag)" />
+  <problem_class id="ConstantValue" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Constant values</problem_class>
+  <description>Condition &lt;code&gt;path != null&lt;/code&gt; is always &lt;code&gt;true&lt;/code&gt;</description>
+  <highlighted_element>path != null</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/util/JSONUtils.java</file>
+  <line>26</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.util.JSONUtils java.lang.String getString(org.json.JSONObject jsonObject, java.lang.String key, java.lang.String defaultValue)" />
+  <problem_class id="ConstantValue" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Constant values</problem_class>
+  <description>Condition &lt;code&gt;value == null&lt;/code&gt; is always &lt;code&gt;false&lt;/code&gt;</description>
+  <highlighted_element>value == null</highlighted_element>
+  <language>JAVA</language>
+  <offset>16</offset>
+  <length>13</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/util/JSONUtils.java</file>
+  <line>132</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.util.JSONUtils java.lang.String[] getArray(org.json.JSONObject jsonObject, java.lang.String key, java.lang.String[] defaultValue)" />
+  <problem_class id="ConstantValue" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Constant values</problem_class>
+  <description>Condition &lt;code&gt;a == null&lt;/code&gt; is always &lt;code&gt;false&lt;/code&gt;</description>
+  <highlighted_element>a == null</highlighted_element>
+  <language>JAVA</language>
+  <offset>16</offset>
+  <length>9</length>
+</problem>
+</problems>

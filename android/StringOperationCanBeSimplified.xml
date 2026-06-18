@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/util/HostMask.java</file>
+  <line>110</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.util.HostMask.Util boolean matches(java.lang.String mask, java.lang.String string)" />
+  <problem_class id="StringOperationCanBeSimplified" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Redundant 'String' operation</problem_class>
+  <description>&lt;code&gt;toUpperCase()&lt;/code&gt; call can be replaced with 'equalsIgnoreCase()'</description>
+  <highlighted_element>toUpperCase</highlighted_element>
+  <language>JAVA</language>
+  <offset>28</offset>
+  <length>11</length>
+</problem>
+</problems>

@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/xml/config.xml</file>
+  <line>2</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/xml/config.xml" />
+  <problem_class id="XmlHighlighting" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">XML highlighting</problem_class>
+  <hints />
+  <description>URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs) #loc</description>
+  <highlighted_element>http://www.w3.org/ns/widgets</highlighted_element>
+  <language>XML</language>
+  <offset>31</offset>
+  <length>28</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/app/src/main/res/xml/config.xml</file>
+  <line>2</line>
+  <module>android.app.main</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/app/src/main/res/xml/config.xml" />
+  <problem_class id="XmlHighlighting" severity="ERROR" attribute_key="WRONG_REFERENCES_ATTRIBUTES">XML highlighting</problem_class>
+  <hints />
+  <description>URI is not registered (Settings | Languages &amp; Frameworks | Schemas and DTDs) #loc</description>
+  <highlighted_element>http://cordova.apache.org/ns/1.0</highlighted_element>
+  <language>XML</language>
+  <offset>72</offset>
+  <length>32</length>
+</problem>
+</problems>

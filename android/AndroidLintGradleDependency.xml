@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/build.gradle</file>
+  <line>11</line>
+  <module>android</module>
+  <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/build.gradle" />
+  <problem_class id="AndroidLintGradleDependency" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Obsolete Gradle Dependency</problem_class>
+  <hints />
+  <description>&lt;html&gt;A newer version of com.google.gms:google-services than 4.4.4 is available: 4.5.0&lt;/html&gt;</description>
+  <highlighted_element>'com.google.gms:google-services:4.4.4'</highlighted_element>
+  <language>Groovy</language>
+  <offset>18</offset>
+  <length>38</length>
+</problem>
+</problems>

@@ -1,0 +1,405 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>69</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.Bridge" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Consider using 'lot'.</description>
+  <highlighted_element>whole lot</highlighted_element>
+  <language>JAVA</language>
+  <offset>41</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>812</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge void callPluginMethod(java.lang.String pluginId, java.lang.String methodName, com.getcapacitor.PluginCall call)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>The word &quot;lookup&quot; is a noun. The verb is spelled with a white space.</description>
+  <highlighted_element>lookup</highlighted_element>
+  <language>JAVA</language>
+  <offset>47</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>925</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge com.getcapacitor.PluginCall getSavedCall(java.lang.String callbackId)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>The word &quot;lookup&quot; is a noun. The verb is spelled with a white space.</description>
+  <highlighted_element>lookup</highlighted_element>
+  <language>JAVA</language>
+  <offset>50</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>1411</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge void setServerBasePath(java.lang.String path)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>An apostrophe may be missing.</description>
+  <highlighted_element>assets</highlighted_element>
+  <language>JAVA</language>
+  <offset>32</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeActivity.java</file>
+  <line>180</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeActivity void onActivityResult(int requestCode, int resultCode, android.content.Intent data)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'Activiy'</description>
+  <highlighted_element>Activiy</highlighted_element>
+  <language>JAVA</language>
+  <offset>26</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>450</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient boolean isValidMsg(java.lang.String msg)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'cresult'</description>
+  <highlighted_element>cresult</highlighted_element>
+  <language>JAVA</language>
+  <offset>32</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>450</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient boolean isValidMsg(java.lang.String msg)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'cnative'</description>
+  <highlighted_element>cnative</highlighted_element>
+  <language>JAVA</language>
+  <offset>64</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/BridgeWebChromeClient.java</file>
+  <line>456</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.BridgeWebChromeClient android.net.Uri createImageFileUri()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'fileprovider'</description>
+  <highlighted_element>fileprovider</highlighted_element>
+  <language>JAVA</language>
+  <offset>93</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/CapConfig.java</file>
+  <line>116</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.CapConfig com.getcapacitor.CapConfig loadFromAssets(android.content.Context context, java.lang.String path)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>An apostrophe may be missing.</description>
+  <highlighted_element>assets</highlighted_element>
+  <language>JAVA</language>
+  <offset>47</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/FileUtils.java</file>
+  <line>146</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.FileUtils java.lang.String readFileFromAssets(android.content.res.AssetManager assetManager, java.lang.String fileName)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>An apostrophe may be missing.</description>
+  <highlighted_element>assets</highlighted_element>
+  <language>JAVA</language>
+  <offset>38</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSArray.java</file>
+  <line>43</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSArray com.getcapacitor.JSArray from(java.lang.Object array)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Use 'an' instead of 'a' if the following word starts with a vowel sound, e.g. 'an article', 'an hour'.</description>
+  <highlighted_element>a</highlighted_element>
+  <language>JAVA</language>
+  <offset>45</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSExport.java</file>
+  <line>142</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSExport org.json.JSONObject createPluginMethodHeader(com.getcapacitor.PluginMethodHandle method)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'rtype'</description>
+  <highlighted_element>rtype</highlighted_element>
+  <language>JAVA</language>
+  <offset>31</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSExport.java</file>
+  <line>159</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSExport java.lang.String generateMethodJS(com.getcapacitor.PluginHandle plugin, com.getcapacitor.PluginMethodHandle method)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>It seems that a hyphen in the noun or adjective 'catch-all' is missing.</description>
+  <highlighted_element>catch all</highlighted_element>
+  <language>JAVA</language>
+  <offset>19</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/JSExport.java</file>
+  <line>159</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.JSExport java.lang.String generateMethodJS(com.getcapacitor.PluginHandle plugin, com.getcapacitor.PluginMethodHandle method)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>The standard spelling is 'JavaScript'</description>
+  <highlighted_element>javascript</highlighted_element>
+  <language>JAVA</language>
+  <offset>57</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/MessageHandler.java</file>
+  <line>59</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.MessageHandler void postMessage(java.lang.String jsonStr)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'cordova'</description>
+  <highlighted_element>cordova</highlighted_element>
+  <language>JAVA</language>
+  <offset>68</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>46</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="field" FQNAME="com.getcapacitor.Plugin BUNDLE_PERSISTED_OPTIONS_JSON_KEY" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>This phrase is redundant. Consider using 'inside'.</description>
+  <highlighted_element>inside of</highlighted_element>
+  <language>JAVA</language>
+  <offset>27</offset>
+  <length>9</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>241</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin com.getcapacitor.PluginHandle getPluginHandle()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Unpaired symbol: '(' seems to be missing</description>
+  <highlighted_element>)</highlighted_element>
+  <language>JAVA</language>
+  <offset>90</offset>
+  <length>1</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>434</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void requestAllPermissions(com.getcapacitor.PluginCall call, java.lang.String callbackName)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Consider removing &quot;of&quot; to be more concise</description>
+  <highlighted_element>all of the</highlighted_element>
+  <language>JAVA</language>
+  <offset>15</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>567</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void pluginRequestAllPermissions()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Consider removing &quot;of&quot; to be more concise</description>
+  <highlighted_element>all of the</highlighted_element>
+  <language>JAVA</language>
+  <offset>15</offset>
+  <length>10</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginConfig.java</file>
+  <line>120</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.PluginConfig org.json.JSONObject getConfigJSON()" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Possible typo: you repeated a word.</description>
+  <highlighted_element>the the</highlighted_element>
+  <language>JAVA</language>
+  <offset>53</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginMethodHandle.java</file>
+  <line>7</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="field" FQNAME="com.getcapacitor.PluginMethodHandle method" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>The word 'reflect' is not a noun. Did you mean 'reflection'?</description>
+  <highlighted_element>reflect</highlighted_element>
+  <language>JAVA</language>
+  <offset>11</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/ProcessedRoute.java</file>
+  <line>4</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.ProcessedRoute" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Use 'A' instead of 'An' if the following word doesn't start with a vowel sound, e.g. 'a sentence', 'a university'.</description>
+  <highlighted_element>An</highlighted_element>
+  <language>JAVA</language>
+  <offset>3</offset>
+  <length>2</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/WebViewLocalServer.java</file>
+  <line>74</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.WebViewLocalServer.PathHandler" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Did you mean 'different from'? 'Different than' is often considered colloquial style.</description>
+  <highlighted_element>than</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>4</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/WebViewLocalServer.java</file>
+  <line>74</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.WebViewLocalServer.PathHandler" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Consider using either the past participle 'invoked' or the present participle 'invoking' here.</description>
+  <highlighted_element>invoke</highlighted_element>
+  <language>JAVA</language>
+  <offset>87</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/WebViewLocalServer.java</file>
+  <line>79</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.WebViewLocalServer.PathHandler" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Long sentences (40 words here) are harder to read, according to the research; consider splitting</description>
+  <highlighted_element>minimum.</highlighted_element>
+  <language>JAVA</language>
+  <offset>7</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/WebViewLocalServer.java</file>
+  <line>601</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.WebViewLocalServer void hostAssets(java.lang.String assetPath)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Use 'a' instead of 'an' if the following word doesn't start with a vowel sound, e.g. 'a sentence', 'a university'.</description>
+  <highlighted_element>an</highlighted_element>
+  <language>JAVA</language>
+  <offset>41</offset>
+  <length>2</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/WebViewLocalServer.java</file>
+  <line>616</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.WebViewLocalServer void hostFiles(java.lang.String basePath)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Use 'a' instead of 'an' if the following word doesn't start with a vowel sound, e.g. 'a sentence', 'a university'.</description>
+  <highlighted_element>an</highlighted_element>
+  <language>JAVA</language>
+  <offset>40</offset>
+  <length>2</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>197</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler com.getcapacitor.JSObject buildResponse(com.getcapacitor.plugin.util.CapacitorHttpUrlConnection connection)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>If a new sentence starts here, add a space and start with an uppercase letter.</description>
+  <highlighted_element>DEFAULT</highlighted_element>
+  <language>JAVA</language>
+  <offset>34</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>303</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler java.lang.Object parseJSON(java.lang.String input)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'ified'</description>
+  <highlighted_element>ified</highlighted_element>
+  <language>JAVA</language>
+  <offset>57</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>304</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler java.lang.Object parseJSON(java.lang.String input)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Typo: In word 'ified'</description>
+  <highlighted_element>ified</highlighted_element>
+  <language>JAVA</language>
+  <offset>27</offset>
+  <length>5</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/util/PermissionHelper.java</file>
+  <line>55</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.util.PermissionHelper boolean hasDefinedPermissions(android.content.Context context, java.lang.String[] permissions)" />
+  <problem_class id="GrazieInspectionRunner" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Grammar</problem_class>
+  <description>Consider removing &quot;of&quot; to be more concise</description>
+  <highlighted_element>all of the</highlighted_element>
+  <language>JAVA</language>
+  <offset>21</offset>
+  <length>10</length>
+</problem>
+</problems>

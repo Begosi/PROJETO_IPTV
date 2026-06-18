@@ -1,0 +1,41 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/CapConfig.java</file>
+  <line>549</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.CapConfig java.util.Map&lt;java.lang.String,com.getcapacitor.PluginConfig&gt; deserializePluginsConfig(org.json.JSONObject pluginsConfig)" />
+  <problem_class id="ThrowablePrintStackTrace" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Call to 'printStackTrace()'</problem_class>
+  <description>Call to &lt;code&gt;printStackTrace()&lt;/code&gt; should probably be replaced with more robust logging</description>
+  <highlighted_element>printStackTrace</highlighted_element>
+  <language>JAVA</language>
+  <offset>18</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>142</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void triggerPermissionCallback(java.lang.reflect.Method method, java.util.Map&lt;java.lang.String,java.lang.Boolean&gt; permissionResultMap)" />
+  <problem_class id="ThrowablePrintStackTrace" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Call to 'printStackTrace()'</problem_class>
+  <description>Call to &lt;code&gt;printStackTrace()&lt;/code&gt; should probably be replaced with more robust logging</description>
+  <highlighted_element>printStackTrace</highlighted_element>
+  <language>JAVA</language>
+  <offset>18</offset>
+  <length>15</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>157</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void triggerActivityCallback(java.lang.reflect.Method method, androidx.activity.result.ActivityResult result)" />
+  <problem_class id="ThrowablePrintStackTrace" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Call to 'printStackTrace()'</problem_class>
+  <description>Call to &lt;code&gt;printStackTrace()&lt;/code&gt; should probably be replaced with more robust logging</description>
+  <highlighted_element>printStackTrace</highlighted_element>
+  <language>JAVA</language>
+  <offset>14</offset>
+  <length>15</length>
+</problem>
+</problems>

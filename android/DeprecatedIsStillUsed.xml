@@ -1,0 +1,106 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>774</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge com.getcapacitor.PluginHandle getPluginWithRequestCode(int requestCode)" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'getPluginWithRequestCode' is still used</description>
+  <highlighted_element>getPluginWithRequestCode</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>24</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/NativePlugin.java</file>
+  <line>14</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.NativePlugin" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'NativePlugin' is still used</description>
+  <highlighted_element>NativePlugin</highlighted_element>
+  <language>JAVA</language>
+  <offset>18</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>264</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void saveCall(com.getcapacitor.PluginCall lastCall)" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'saveCall' is still used</description>
+  <highlighted_element>saveCall</highlighted_element>
+  <language>JAVA</language>
+  <offset>16</offset>
+  <length>8</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>285</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin com.getcapacitor.PluginCall getSavedCall()" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'getSavedCall' is still used</description>
+  <highlighted_element>getSavedCall</highlighted_element>
+  <language>JAVA</language>
+  <offset>22</offset>
+  <length>12</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>598</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void pluginRequestPermissions(java.lang.String[] permissions, int requestCode)" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'pluginRequestPermissions' is still used</description>
+  <highlighted_element>pluginRequestPermissions</highlighted_element>
+  <language>JAVA</language>
+  <offset>16</offset>
+  <length>24</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>899</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void handleRequestPermissionsResult(int requestCode, java.lang.String[] permissions, int[] grantResults)" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'handleRequestPermissionsResult' is still used</description>
+  <highlighted_element>handleRequestPermissionsResult</highlighted_element>
+  <language>JAVA</language>
+  <offset>19</offset>
+  <length>30</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>958</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void handleOnActivityResult(int requestCode, int resultCode, android.content.Intent data)" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'handleOnActivityResult' is still used</description>
+  <highlighted_element>handleOnActivityResult</highlighted_element>
+  <language>JAVA</language>
+  <offset>19</offset>
+  <length>22</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginCall.java</file>
+  <line>34</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="field" FQNAME="com.getcapacitor.PluginCall isReleased" />
+  <problem_class id="DeprecatedIsStillUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Deprecated member is still used</problem_class>
+  <description>Deprecated member 'isReleased' is still used</description>
+  <highlighted_element>isReleased</highlighted_element>
+  <language>JAVA</language>
+  <offset>20</offset>
+  <length>10</length>
+</problem>
+</problems>

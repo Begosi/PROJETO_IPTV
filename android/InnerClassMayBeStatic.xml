@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginCall.java</file>
+  <line>388</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="class" FQNAME="com.getcapacitor.PluginCall.PluginCallDataTypeException" />
+  <problem_class id="InnerClassMayBeStatic" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Inner class may be 'static'</problem_class>
+  <description>Inner class &lt;code&gt;PluginCallDataTypeException&lt;/code&gt; may be 'static'</description>
+  <highlighted_element>PluginCallDataTypeException</highlighted_element>
+  <language>JAVA</language>
+  <offset>10</offset>
+  <length>27</length>
+</problem>
+</problems>

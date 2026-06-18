@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/AndroidProtocolHandler.java</file>
+  <line>73</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.AndroidProtocolHandler java.io.InputStream openContentUrl(android.net.Uri uri)" />
+  <problem_class id="WrapperTypeMayBePrimitive" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Wrapper type may be primitive</problem_class>
+  <description>Type may be primitive</description>
+  <highlighted_element>Integer</highlighted_element>
+  <language>JAVA</language>
+  <offset>8</offset>
+  <length>7</length>
+</problem>
+</problems>

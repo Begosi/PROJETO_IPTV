@@ -1,0 +1,86 @@
+<problems>
+<problem>
+  <file>android.app.androidTest</file>
+  <module>android.app.androidTest</module>
+  <entry_point TYPE="module" FQNAME="android.app.androidTest" />
+  <problem_class id="UnnecessaryModuleDependencyInspection" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary module dependency</problem_class>
+  <hints>
+    <hint value="android.app.main" />
+  </hints>
+  <description>Module 'android.app.androidTest' sources do not depend on module 'android.app.main' sources</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>android.app.androidTest</file>
+  <module>android.app.androidTest</module>
+  <entry_point TYPE="module" FQNAME="android.app.androidTest" />
+  <problem_class id="UnnecessaryModuleDependencyInspection" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary module dependency</problem_class>
+  <hints>
+    <hint value="android.capacitor-android.main" />
+  </hints>
+  <description>Module 'android.app.androidTest' sources do not depend on module 'android.capacitor-android.main' sources</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>android.app.androidTest</file>
+  <module>android.app.androidTest</module>
+  <entry_point TYPE="module" FQNAME="android.app.androidTest" />
+  <problem_class id="UnnecessaryModuleDependencyInspection" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary module dependency</problem_class>
+  <hints>
+    <hint value="android.capacitor-cordova-android-plugins.main" />
+  </hints>
+  <description>Module 'android.app.androidTest' sources do not depend on module 'android.capacitor-cordova-android-plugins.main' sources</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>android.app.main</file>
+  <module>android.app.main</module>
+  <entry_point TYPE="module" FQNAME="android.app.main" />
+  <problem_class id="UnnecessaryModuleDependencyInspection" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary module dependency</problem_class>
+  <hints>
+    <hint value="android.capacitor-cordova-android-plugins.main" />
+  </hints>
+  <description>Module 'android.app.main' sources do not depend on module 'android.capacitor-cordova-android-plugins.main' sources</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>android.app.unitTest</file>
+  <module>android.app.unitTest</module>
+  <entry_point TYPE="module" FQNAME="android.app.unitTest" />
+  <problem_class id="UnnecessaryModuleDependencyInspection" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary module dependency</problem_class>
+  <hints>
+    <hint value="android.app.main" />
+  </hints>
+  <description>Module 'android.app.unitTest' sources do not depend on module 'android.app.main' sources</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>android.app.unitTest</file>
+  <module>android.app.unitTest</module>
+  <entry_point TYPE="module" FQNAME="android.app.unitTest" />
+  <problem_class id="UnnecessaryModuleDependencyInspection" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary module dependency</problem_class>
+  <hints>
+    <hint value="android.capacitor-android.main" />
+  </hints>
+  <description>Module 'android.app.unitTest' sources do not depend on module 'android.capacitor-android.main' sources</description>
+  <highlighted_element />
+  <language />
+</problem>
+<problem>
+  <file>android.app.unitTest</file>
+  <module>android.app.unitTest</module>
+  <entry_point TYPE="module" FQNAME="android.app.unitTest" />
+  <problem_class id="UnnecessaryModuleDependencyInspection" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary module dependency</problem_class>
+  <hints>
+    <hint value="android.capacitor-cordova-android-plugins.main" />
+  </hints>
+  <description>Module 'android.app.unitTest' sources do not depend on module 'android.capacitor-cordova-android-plugins.main' sources</description>
+  <highlighted_element />
+  <language />
+</problem>
+</problems>

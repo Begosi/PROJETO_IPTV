@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/FileUtils.java</file>
+  <line>101</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.FileUtils java.lang.String getFileUrlForUri(android.content.Context context, android.net.Uri uri)" />
+  <problem_class id="UnnecessaryBoxing" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Unnecessary boxing</problem_class>
+  <description>Redundant boxing, &lt;code&gt;Long.parseLong()&lt;/code&gt; call can be used instead</description>
+  <highlighted_element>valueOf</highlighted_element>
+  <language>JAVA</language>
+  <offset>122</offset>
+  <length>7</length>
+</problem>
+</problems>

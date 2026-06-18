@@ -1,0 +1,80 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookies.java</file>
+  <line>63</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.CapacitorCookies void getCookies(com.getcapacitor.PluginCall call)" />
+  <problem_class id="CharsetObjectCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Standard 'Charset' object can be used</problem_class>
+  <description>StandardCharsets.UTF_8 can be used instead</description>
+  <highlighted_element>StandardCharsets.UTF_8.name()</highlighted_element>
+  <language>JAVA</language>
+  <offset>72</offset>
+  <length>29</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookies.java</file>
+  <line>64</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.CapacitorCookies void getCookies(com.getcapacitor.PluginCall call)" />
+  <problem_class id="CharsetObjectCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Standard 'Charset' object can be used</problem_class>
+  <description>StandardCharsets.UTF_8 can be used instead</description>
+  <highlighted_element>StandardCharsets.UTF_8.name()</highlighted_element>
+  <language>JAVA</language>
+  <offset>72</offset>
+  <length>29</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/CapacitorHttpUrlConnection.java</file>
+  <line>261</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.CapacitorHttpUrlConnection void writeObjectRequestBody(com.getcapacitor.JSObject object)" />
+  <problem_class id="CharsetObjectCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Standard 'Charset' object can be used</problem_class>
+  <description>StandardCharsets.UTF_8 can be used instead</description>
+  <highlighted_element>&quot;UTF-8&quot;</highlighted_element>
+  <language>JAVA</language>
+  <offset>53</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/CapacitorHttpUrlConnection.java</file>
+  <line>263</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.CapacitorHttpUrlConnection void writeObjectRequestBody(com.getcapacitor.JSObject object)" />
+  <problem_class id="CharsetObjectCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Standard 'Charset' object can be used</problem_class>
+  <description>StandardCharsets.UTF_8 can be used instead</description>
+  <highlighted_element>&quot;UTF-8&quot;</highlighted_element>
+  <language>JAVA</language>
+  <offset>62</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>181</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder void addUrlParam(java.lang.StringBuilder sb, java.lang.String key, java.lang.String value, boolean shouldEncode)" />
+  <problem_class id="CharsetObjectCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Standard 'Charset' object can be used</problem_class>
+  <description>StandardCharsets.UTF_8 can be used instead</description>
+  <highlighted_element>&quot;UTF-8&quot;</highlighted_element>
+  <language>JAVA</language>
+  <offset>49</offset>
+  <length>7</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>182</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder void addUrlParam(java.lang.StringBuilder sb, java.lang.String key, java.lang.String value, boolean shouldEncode)" />
+  <problem_class id="CharsetObjectCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Standard 'Charset' object can be used</problem_class>
+  <description>StandardCharsets.UTF_8 can be used instead</description>
+  <highlighted_element>&quot;UTF-8&quot;</highlighted_element>
+  <language>JAVA</language>
+  <offset>53</offset>
+  <length>7</length>
+</problem>
+</problems>

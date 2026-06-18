@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>255</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler java.lang.Object readData(com.getcapacitor.plugin.util.ICapacitorHttpUrlConnection connection, com.getcapacitor.plugin.util.HttpRequestHandler.ResponseType responseType)" />
+  <problem_class id="EnhancedSwitchMigration" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Statement can be replaced with enhanced 'switch'</problem_class>
+  <description>Switch statement can be replaced with enhanced 'switch'</description>
+  <highlighted_element>switch</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>6</length>
+</problem>
+</problems>

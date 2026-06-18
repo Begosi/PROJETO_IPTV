@@ -1,0 +1,54 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>781</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void checkPermissions(com.getcapacitor.PluginCall pluginCall)" />
+  <problem_class id="SizeReplaceableByIsEmpty" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'size() == 0' can be replaced with 'isEmpty()'</problem_class>
+  <description>&lt;code&gt;permissionsResult.size() == 0&lt;/code&gt; can be replaced with 'permissionsResult.isEmpty()'</description>
+  <highlighted_element>permissionsResult.size() == 0</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>29</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookies.java</file>
+  <line>56</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.CapacitorCookies void getCookies(com.getcapacitor.PluginCall call)" />
+  <problem_class id="SizeReplaceableByIsEmpty" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'size() == 0' can be replaced with 'isEmpty()'</problem_class>
+  <description>&lt;code&gt;cookie.length() &gt; 0&lt;/code&gt; can be replaced with '!cookie.isEmpty()'</description>
+  <highlighted_element>cookie.length() &gt; 0</highlighted_element>
+  <language>JAVA</language>
+  <offset>20</offset>
+  <length>19</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>151</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder setUrlParams(com.getcapacitor.JSObject params, boolean shouldEncode)" />
+  <problem_class id="SizeReplaceableByIsEmpty" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'size() == 0' can be replaced with 'isEmpty()'</problem_class>
+  <description>&lt;code&gt;urlQueryBuilder.length() &gt; 0&lt;/code&gt; can be replaced with '!urlQueryBuilder.isEmpty()'</description>
+  <highlighted_element>urlQueryBuilder.length() &gt; 0</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>28</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>156</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder setUrlParams(com.getcapacitor.JSObject params, boolean shouldEncode)" />
+  <problem_class id="SizeReplaceableByIsEmpty" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'size() == 0' can be replaced with 'isEmpty()'</problem_class>
+  <description>&lt;code&gt;urlQueryBuilder.length() &gt; 0&lt;/code&gt; can be replaced with '!urlQueryBuilder.isEmpty()'</description>
+  <highlighted_element>urlQueryBuilder.length() &gt; 0</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>28</length>
+</problem>
+</problems>

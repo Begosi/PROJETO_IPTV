@@ -1,0 +1,28 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/AndroidProtocolHandler.java</file>
+  <line>34</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.AndroidProtocolHandler java.io.InputStream openResource(android.net.Uri uri)" />
+  <problem_class id="SequencedCollectionMethodCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">SequencedCollection method can be used</problem_class>
+  <description>Can be replaced with 'getLast()' call</description>
+  <highlighted_element>get</highlighted_element>
+  <language>JAVA</language>
+  <offset>40</offset>
+  <length>3</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/CapacitorCookieManager.java</file>
+  <line>130</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.CapacitorCookieManager java.net.HttpCookie[] getCookies(java.lang.String url)" />
+  <problem_class id="SequencedCollectionMethodCanBeUsed" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">SequencedCollection method can be used</problem_class>
+  <description>Can be replaced with 'getFirst()' call</description>
+  <highlighted_element>get</highlighted_element>
+  <language>JAVA</language>
+  <offset>60</offset>
+  <length>3</length>
+</problem>
+</problems>

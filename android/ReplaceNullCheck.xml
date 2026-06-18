@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/WebViewLocalServer.java</file>
+  <line>100</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.WebViewLocalServer.PathHandler PathHandler(java.lang.String encoding, java.lang.String charset, int statusCode, java.lang.String reasonPhrase, java.util.Map&lt;java.lang.String,java.lang.String&gt; responseHeaders)" />
+  <problem_class id="ReplaceNullCheck" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Null check can be replaced with method call</problem_class>
+  <description>'if' statement can be replaced with call to 'Objects.requireNonNullElseGet()'</description>
+  <highlighted_element>if</highlighted_element>
+  <language>JAVA</language>
+  <offset>12</offset>
+  <length>2</length>
+</problem>
+</problems>

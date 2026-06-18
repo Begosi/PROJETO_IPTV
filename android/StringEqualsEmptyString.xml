@@ -1,0 +1,67 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/AppUUID.java</file>
+  <line>32</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.AppUUID void assertAppUUID(androidx.appcompat.app.AppCompatActivity activity)" />
+  <problem_class id="StringEqualsEmptyString" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'String.equals()' can be replaced with 'String.isEmpty()'</problem_class>
+  <description>&lt;code&gt;equals(&quot;&quot;)&lt;/code&gt; can be replaced with 'isEmpty()'</description>
+  <highlighted_element>equals</highlighted_element>
+  <language>JAVA</language>
+  <offset>17</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Bridge.java</file>
+  <line>730</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Bridge java.lang.String pluginId(java.lang.Class&lt;? extends com.getcapacitor.Plugin&gt; clazz)" />
+  <problem_class id="StringEqualsEmptyString" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'String.equals()' can be replaced with 'String.isEmpty()'</problem_class>
+  <description>&lt;code&gt;equals(&quot;&quot;)&lt;/code&gt; can be replaced with 'isEmpty()'</description>
+  <highlighted_element>equals</highlighted_element>
+  <language>JAVA</language>
+  <offset>24</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginHandle.java</file>
+  <line>43</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.PluginHandle PluginHandle(java.lang.Class&lt;? extends com.getcapacitor.Plugin&gt; clazz, com.getcapacitor.Bridge bridge)" />
+  <problem_class id="StringEqualsEmptyString" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'String.equals()' can be replaced with 'String.isEmpty()'</problem_class>
+  <description>&lt;code&gt;equals(&quot;&quot;)&lt;/code&gt; can be replaced with 'isEmpty()'</description>
+  <highlighted_element>equals</highlighted_element>
+  <language>JAVA</language>
+  <offset>47</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/PluginHandle.java</file>
+  <line>51</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.PluginHandle PluginHandle(java.lang.Class&lt;? extends com.getcapacitor.Plugin&gt; clazz, com.getcapacitor.Bridge bridge)" />
+  <problem_class id="StringEqualsEmptyString" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'String.equals()' can be replaced with 'String.isEmpty()'</problem_class>
+  <description>&lt;code&gt;equals(&quot;&quot;)&lt;/code&gt; can be replaced with 'isEmpty()'</description>
+  <highlighted_element>equals</highlighted_element>
+  <language>JAVA</language>
+  <offset>41</offset>
+  <length>6</length>
+</problem>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/plugin/util/HttpRequestHandler.java</file>
+  <line>171</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor.plugin.util</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder com.getcapacitor.plugin.util.HttpRequestHandler.HttpURLConnectionBuilder setUrlParams(com.getcapacitor.JSObject params, boolean shouldEncode)" />
+  <problem_class id="StringEqualsEmptyString" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">'String.equals()' can be replaced with 'String.isEmpty()'</problem_class>
+  <description>&lt;code&gt;equals(&quot;&quot;)&lt;/code&gt; can be replaced with 'isEmpty()'</description>
+  <highlighted_element>equals</highlighted_element>
+  <language>JAVA</language>
+  <offset>28</offset>
+  <length>6</length>
+</problem>
+</problems>

@@ -1,0 +1,15 @@
+<problems>
+<problem>
+  <file>file://$PROJECT_DIR$/../node_modules/@capacitor/android/capacitor/src/main/java/com/getcapacitor/Plugin.java</file>
+  <line>759</line>
+  <module>android.capacitor-android.main</module>
+  <package>com.getcapacitor</package>
+  <entry_point TYPE="method" FQNAME="com.getcapacitor.Plugin void removeAllListeners(com.getcapacitor.PluginCall call)" />
+  <problem_class id="DefaultAnnotationParam" severity="WARNING" attribute_key="WARNING_ATTRIBUTES">Default annotation parameter value</problem_class>
+  <description>Redundant default parameter value assignment</description>
+  <highlighted_element>PluginMethod.RETURN_PROMISE</highlighted_element>
+  <language>JAVA</language>
+  <offset>31</offset>
+  <length>27</length>
+</problem>
+</problems>
