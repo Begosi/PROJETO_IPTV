@@ -10,7 +10,8 @@
     "build": "vite build",
     "dist": "vite build && node --experimental-require-module ./node_modules/electron-builder/cli.js",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "mobile:sync": "vite build && cap sync"
   },
   "build": {
     "appId": "com.portaliptv.app",
@@ -34,6 +35,7 @@
     ]
   },
   "dependencies": {
+    "@capacitor/core": "^8.4.0",
     "hls.js": "^1.6.16",
     "localforage": "^1.10.0",
     "lucide-react": "^1.18.0",
@@ -42,6 +44,9 @@
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
+    "@capacitor/android": "^8.4.0",
+    "@capacitor/cli": "^8.4.0",
+    "@capacitor/ios": "^8.4.0",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
