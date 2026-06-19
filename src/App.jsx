@@ -70,6 +70,8 @@ function App() {
         title={activeVideo.title} 
         id={activeVideo.id}
         type={activeVideo.type}
+        stream={activeVideo.stream}
+        listId={activeVideo.listId}
         onClose={() => setActiveVideo(null)} 
       />
     );
@@ -93,6 +95,7 @@ function App() {
         onLogout={() => setActiveList(null)} 
         onSelectType={setActiveCatalogType} 
         onRefreshList={handleRefreshList}
+        onPlay={(videoObj) => setActiveVideo(videoObj)}
       />
     );
   }

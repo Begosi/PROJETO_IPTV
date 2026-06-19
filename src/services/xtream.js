@@ -1,4 +1,4 @@
-import { getProxiedUrl } from '../utils/url';
+import { getProxiedUrl, isCapacitor } from '../utils/url';
 
 export class XtreamService {
   constructor(url, username, password) {
@@ -19,14 +19,33 @@ export class XtreamService {
 
     try {
       const targetUrl = getProxiedUrl(url.toString());
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15s timeout
+      
+      const headers = {};
+      if (isCapacitor) {
+        headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+      }
+      
       const response = await fetch(targetUrl, {
-        method: 'GET'
+        method: 'GET',
+        headers,
+        signal: controller.signal
       });
+      
+      clearTimeout(timeoutId);
+      
       if (!response.ok) {
         throw new Error(`Erro na API Xtream: ${response.status}`);
       }
-      return await response.json();
+      const data = await response.json();
+      console.log(`[Xtream Response - ${action}]:`, data);
+      return data;
     } catch (error) {
+      if (error.name === 'AbortError') {
+        throw new Error('A conexão com o servidor está muito lenta (Timeout). Verifique sua internet.');
+      }
       console.error(`Falha na requisição Xtream (${action}):`, error);
       throw error;
     }
@@ -38,8 +57,25 @@ export class XtreamService {
     url.searchParams.append('username', this.username);
     url.searchParams.append('password', this.password);
     const targetUrl = getProxiedUrl(url.toString());
-    const res = await fetch(targetUrl);
-    return res.json();
+    
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
+    
+    const headers = {};
+    if (isCapacitor) {
+      headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+    }
+    
+    try {
+      const res = await fetch(targetUrl, { headers, signal: controller.signal });
+      clearTimeout(timeoutId);
+      return await res.json();
+    } catch (error) {
+      if (error.name === 'AbortError') {
+        throw new Error('A conexão com o servidor está muito lenta (Timeout). Verifique sua internet.');
+      }
+      throw error;
+    }
   }
 
   async getSeriesInfo(seriesId) {
@@ -52,7 +88,8 @@ export class XtreamService {
       'vod': 'get_vod_categories',
       'series': 'get_series_categories'
     };
-    return this.fetchApi(actionMap[type]);
+    const data = await this.fetchApi(actionMap[type]);
+    return this.normalizeData(data);
   }
 
   async getStreams(type, categoryId) {
@@ -65,7 +102,26 @@ export class XtreamService {
     if (categoryId !== undefined && categoryId !== null) {
       params.category_id = categoryId;
     }
-    return this.fetchApi(actionMap[type], params);
+    const data = await this.fetchApi(actionMap[type], params);
+    return this.normalizeData(data);
+  }
+
+  normalizeData(data) {
+    if (!data) return [];
+    if (typeof data === 'object' && !Array.isArray(data)) {
+      // Detecta erro de autenticação se o servidor devolver só o user_info
+      if (data.user_info && data.user_info.auth === 0) {
+        throw new Error("Usuário ou senha inválidos para este servidor.");
+      }
+      // Alguns painéis retornam os dados como um objeto { "0": {...}, "1": {...} } em vez de array
+      // Se tiver stream_info ou server_info no meio da resposta, ignoramos, pois não é lista
+      if (data.server_info || data.user_info) {
+        // Se tem server_info e não tem array, é provável que não tenha conteúdo ou a action falhou
+        return [];
+      }
+      return Object.values(data);
+    }
+    return Array.isArray(data) ? data : [];
   }
 
   buildStreamUrl(type, streamId, containerExtension) {

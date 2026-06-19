@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Tv, Film, Clapperboard, LogOut, RefreshCw } from 'lucide-react';
+import { Tv, Film, Clapperboard, LogOut, RefreshCw, Play } from 'lucide-react';
+import localforage from 'localforage';
 import { detectBestConnectionMode } from '../utils/url';
 import './Dashboard.css';
 
@@ -7,6 +8,8 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [counts, setCounts] = useState({ live: null, vod: null, series: null });
   const [isLoadingCounts, setIsLoadingCounts] = useState(true);
+  const [fetchError, setFetchError] = useState(null);
+  const [continueWatching, setContinueWatching] = useState([]);
 
   useEffect(() => {
     let active = true;
@@ -18,18 +21,30 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
         
         const xtreamService = new XtreamService(activeList.url, activeList.username, activeList.password);
 
+        let errors = [];
+        const safeFetch = (promise) => promise.catch(e => {
+          errors.push(e.message);
+          return [];
+        });
+
         const [
           liveStreams, liveCats,
           vodStreams, vodCats,
           seriesStreams, seriesCats
         ] = await Promise.all([
-          xtreamService.getStreams('live').catch(() => []),
-          xtreamService.getCategories('live').catch(() => []),
-          xtreamService.getStreams('vod').catch(() => []),
-          xtreamService.getCategories('vod').catch(() => []),
-          xtreamService.getStreams('series').catch(() => []),
-          xtreamService.getCategories('series').catch(() => [])
+          safeFetch(xtreamService.getStreams('live')),
+          safeFetch(xtreamService.getCategories('live')),
+          safeFetch(xtreamService.getStreams('vod')),
+          safeFetch(xtreamService.getCategories('vod')),
+          safeFetch(xtreamService.getStreams('series')),
+          safeFetch(xtreamService.getCategories('series'))
         ]);
+        
+        if (errors.length > 0 && active) {
+          setFetchError(errors[0]); // Mostra apenas o primeiro erro para não poluir muito
+        } else if (active) {
+          setFetchError(null);
+        }
 
         await Promise.all([
           CacheService.set(`streams_${listId}_live`, liveStreams),
@@ -134,6 +149,62 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
       delete window.__loadCounts;
     };
   }, [activeList]);
+
+  useEffect(() => {
+    let active = true;
+    const loadContinueWatching = async () => {
+      const listId = activeList.id;
+      let cwVod = [];
+      let cwSeries = [];
+      try {
+        cwVod = await localforage.getItem(`continue_watching_${listId}_vod`) || [];
+        cwSeries = await localforage.getItem(`continue_watching_${listId}_series`) || [];
+      } catch (e) {}
+      
+      const combined = [...cwVod, ...cwSeries].sort((a, b) => (b.lastWatched || 0) - (a.lastWatched || 0)).slice(0, 15);
+      if (active) {
+        setContinueWatching(combined);
+      }
+    };
+    loadContinueWatching();
+    return () => { active = false; };
+  }, [activeList]);
+
+  const handlePlayCW = async (item) => {
+    if (!onPlay) return;
+    
+    try {
+      if (activeList.type === 'xtream') {
+        const { XtreamService } = await import('../services/xtream.js');
+        const service = new XtreamService(activeList.url, activeList.username, activeList.password);
+        let streamUrl = '';
+        if (item.type === 'vod') {
+          streamUrl = await service.getVodStreamUrl(item.id, item.stream_obj?.container_extension);
+        } else if (item.type === 'series') {
+          streamUrl = await service.getSeriesStreamUrl(item.id, item.stream_obj?.container_extension);
+        }
+        onPlay({ 
+          url: streamUrl, 
+          title: item.title, 
+          id: item.id, 
+          type: item.type, 
+          stream: item.stream_obj, 
+          listId: activeList.id 
+        });
+      } else if (activeList.type === 'm3u') {
+        onPlay({
+          url: item.stream_obj.url,
+          title: item.title,
+          id: item.id,
+          type: item.type,
+          stream: item.stream_obj,
+          listId: activeList.id
+        });
+      }
+    } catch (err) {
+      alert('Erro ao carregar o vídeo: ' + err.message);
+    }
+  };
   
   const currentDate = new Date().toLocaleDateString('pt-BR', { 
     month: 'long', 
@@ -191,6 +262,12 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
         </div>
       </header>
 
+      {fetchError && (
+        <div style={{ background: 'rgba(239, 68, 68, 0.2)', padding: '1rem', margin: '0 2rem', borderRadius: '8px', border: '1px solid #ef4444', color: '#fff' }}>
+          <strong>Erro de Conexão:</strong> {fetchError}
+        </div>
+      )}
+
       <div className="dashboard-grid">
         <div className="dashboard-card live-tv" onClick={() => onSelectType('live')}>
           <div className="card-icon">
@@ -225,6 +302,56 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
           <button className="card-action">Assistir</button>
         </div>
       </div>
+
+      {continueWatching.length > 0 && (
+        <div className="continue-watching-section" style={{ padding: '0 2rem', marginTop: '2rem' }}>
+          <h2 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: '#fff' }}>Continue Assistindo</h2>
+          <div className="continue-watching-row" style={{ 
+            display: 'flex', gap: '1rem', overflowX: 'auto', paddingBottom: '1rem',
+            scrollbarWidth: 'thin', scrollbarColor: 'var(--primary) transparent' 
+          }}>
+            {continueWatching.map(item => {
+              const progressPct = item.duration ? (item.progress / item.duration) * 100 : 0;
+              return (
+                <div 
+                  key={`${item.type}_${item.id}`} 
+                  className="cw-card" 
+                  onClick={() => handlePlayCW(item)}
+                  style={{
+                    flex: '0 0 auto',
+                    width: '200px',
+                    background: 'rgba(255,255,255,0.05)',
+                    borderRadius: '8px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s',
+                    position: 'relative'
+                  }}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                >
+                  <div style={{ position: 'relative', aspectRatio: '16/9', background: '#111' }}>
+                    {item.stream_icon ? (
+                      <img src={item.stream_icon} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.src = 'https://via.placeholder.com/300x169?text=Sem+Imagem'; }} />
+                    ) : (
+                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#222' }}>
+                        <Play size={32} color="rgba(255,255,255,0.2)" />
+                      </div>
+                    )}
+                    <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '4px', background: 'rgba(255,255,255,0.2)' }}>
+                      <div style={{ width: `${progressPct}%`, height: '100%', background: '#e50914' }} />
+                    </div>
+                  </div>
+                  <div style={{ padding: '0.75rem' }}>
+                    <h3 style={{ fontSize: '0.9rem', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.title}</h3>
+                    <span style={{ fontSize: '0.75rem', color: '#aaa', textTransform: 'capitalize' }}>{item.type === 'vod' ? 'Filme' : 'Série'}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       <footer className="dashboard-footer">
         <div className="footer-info">

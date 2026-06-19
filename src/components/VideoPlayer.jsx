@@ -3,10 +3,10 @@ import Hls from 'hls.js';
 import mpegts from 'mpegts.js';
 import { Play, Pause, Maximize, Minimize, PictureInPicture, ArrowLeft, Loader2, AlertCircle, Copy, Check, Terminal } from 'lucide-react';
 import localforage from 'localforage';
-import { getProxiedUrl, isElectron } from '../utils/url';
+import { getProxiedUrl, isElectron, resolveRedirect } from '../utils/url';
 import './VideoPlayer.css';
 
-export function VideoPlayer({ url, title, onClose, id, type }) {
+export function VideoPlayer({ url, title, onClose, id, type, stream, listId }) {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -198,13 +198,24 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
         setIsLoading(false);
       } else {
         // Fallback nativo para MP4, WebM ou Safari
-        video.src = getProxiedUrl(url);
+        let playUrl = getProxiedUrl(url);
+        if (playUrl.startsWith('http://')) {
+          try {
+            const resolved = await resolveRedirect(playUrl);
+            if (resolved) {
+              playUrl = resolved;
+            }
+          } catch (err) {
+            console.error('[VideoPlayer] Falha ao resolver redirecionamento:', err);
+          }
+        }
+        video.src = playUrl;
         video.addEventListener('loadedmetadata', () => {
           setIsLoading(false);
           video.play().catch(() => console.log('Autoplay blocked'));
         });
         video.addEventListener('error', (e) => {
-          console.error('Erro de mídia nativa:', video.error);
+          console.error('Erro de mídia nativa:', video.error, e);
           let errorMsg = 'Erro desconhecido ao carregar o vídeo.';
           if (video.error) {
             switch (video.error.code) {
@@ -232,9 +243,50 @@ export function VideoPlayer({ url, title, onClose, id, type }) {
     initPlayer();
 
     // Salvar progresso no banco a cada 5 segundos
-    const progressInterval = setInterval(() => {
+    const progressInterval = setInterval(async () => {
       if (video && !video.paused && video.currentTime > 0) {
         localforage.setItem(`resume_${id}`, video.currentTime);
+        
+        if ((type === 'vod' || type === 'series') && stream && listId) {
+          try {
+            const key = `continue_watching_${listId}_${type}`;
+            let cwList = await localforage.getItem(key) || [];
+            const percent = video.duration ? (video.currentTime / video.duration) : 0;
+            
+            if (percent > 0.95) {
+              const newList = cwList.filter(item => item.id !== id);
+              if (newList.length !== cwList.length) {
+                await localforage.setItem(key, newList);
+              }
+            } else {
+              const idx = cwList.findIndex(item => item.id === id);
+              const watchItem = {
+                id: id,
+                title: title,
+                type: type,
+                stream_icon: stream.stream_icon || stream.cover || null,
+                progress: video.currentTime,
+                duration: video.duration,
+                lastWatched: Date.now(),
+                stream_obj: stream
+              };
+              
+              if (idx >= 0) {
+                cwList[idx] = watchItem;
+                // Move para o topo
+                cwList.splice(idx, 1);
+                cwList.unshift(watchItem);
+              } else {
+                cwList.unshift(watchItem);
+              }
+              
+              if (cwList.length > 50) cwList.length = 50;
+              await localforage.setItem(key, cwList);
+            }
+          } catch (e) {
+            console.error('Falha ao salvar progresso do Continue Assistindo', e);
+          }
+        }
       }
     }, 5000);
 

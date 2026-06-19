@@ -1,5 +1,6 @@
 // Verifica se a aplicação está rodando no ambiente Electron (Desktop) ou Navegador (Web/Vercel)
 export const isElectron = typeof window !== 'undefined' && window.require !== undefined;
+export const isCapacitor = typeof window !== 'undefined' && window.Capacitor !== undefined;
 
 /**
  * Retorna a URL original no desktop (Electron), ou a URL roteada através de um proxy
@@ -7,11 +8,16 @@ export const isElectron = typeof window !== 'undefined' && window.require !== un
  */
 export function getProxiedUrl(url) {
   if (!url) return url;
-  if (isElectron) return url;
+  if (isElectron || isCapacitor) return url;
 
   try {
     if (url.includes('/api/proxy')) {
       return url;
+    }
+
+    // Em ambiente de desenvolvimento local (Vite), usa o nosso proxy interno (sem limites de tamanho!)
+    if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.DEV) {
+      return `/api/proxy?url=${encodeURIComponent(url)}`;
     }
 
     const isHlsOrSegment = url.includes('.m3u8') || url.includes('.ts') || url.includes('/key/') || url.includes('/live/') || url.includes('stream_type=live');
@@ -70,12 +76,17 @@ export function getProxiedUrl(url) {
  * Testa conexão direta por HTTPS (com upgrade de protocolo) e múltiplos proxies de CORS públicos.
  */
 export async function detectBestConnectionMode(url, username = '', password = '') {
-  if (!url || isElectron) return { mode: 'direct' };
+  if (!url || isElectron || isCapacitor) return { mode: 'direct' };
 
   try {
     const parsed = new URL(url);
     const hostname = parsed.hostname;
     const cacheKey = `proxy_config_${hostname}`;
+
+    // Força o uso do proxy local se estiver em desenvolvimento (Vite)
+    if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.DEV) {
+      return { mode: 'proxy', proxyTemplate: '/api/proxy?url={url}', timestamp: Date.now() };
+    }
 
     // Verifica se já detectamos recentemente para evitar requisições redundantes
     const cached = localStorage.getItem(cacheKey);
@@ -161,3 +172,73 @@ export async function detectBestConnectionMode(url, username = '', password = ''
     return { mode: 'direct' };
   }
 }
+
+/**
+ * Resolve o redirecionamento de uma URL HTTP de vídeo para obter o destino final.
+ * Útil para evitar erros de Mixed Content no WebView (Capacitor) quando o servidor IPTV
+ * faz redirecionamento de uma URL HTTP para um CDN ou worker HTTPS (como Cloudflare Workers).
+ */
+export async function resolveRedirect(url) {
+  if (!url) return url;
+
+  // Apenas precisamos resolver se a página principal estiver rodando em HTTPS (ex: https://localhost no Capacitor)
+  // e a URL informada for HTTP, pois isso causaria bloqueio de Mixed Content.
+  const isHttpsPage = typeof window !== 'undefined' && window.location.protocol === 'https:';
+  const isHttpUrl = url.startsWith('http://');
+
+  if (!isHttpsPage || !isHttpUrl) {
+    return url;
+  }
+
+  try {
+    console.log('[UrlResolver] Resolvendo redirecionamento HTTP para evitar Mixed Content:', url);
+    
+    // Em Capacitor, se o plugin CapacitorHttp estiver ativo, o fetch global é interceptado nativamente,
+    // o que permite fazer requisições HTTP a partir de HTTPS (contornando Mixed Content/CORS).
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
+
+    // Tenta primeiro com HEAD para economizar banda/tempo
+    try {
+      const response = await fetch(url, {
+        method: 'HEAD',
+        signal: controller.signal,
+        redirect: 'follow'
+      });
+      clearTimeout(timeoutId);
+      
+      if (response.url && response.url !== url) {
+        console.log('[UrlResolver] Redirecionamento resolvido via HEAD:', response.url);
+        return response.url;
+      }
+    } catch (err) {
+      console.warn('[UrlResolver] Método HEAD falhou ou foi bloqueado, tentando com GET abortado:', err);
+    }
+
+    // Se o HEAD falhar, tentamos com GET e abortamos a transferência do corpo de mídia imediatamente
+    const getController = new AbortController();
+    const getTimeoutId = setTimeout(() => getController.abort(), 4000);
+
+    const response = await fetch(url, {
+      method: 'GET',
+      signal: getController.signal,
+      redirect: 'follow'
+    });
+
+    clearTimeout(getTimeoutId);
+    const resolvedUrl = response.url;
+
+    // Aborta o download imediatamente para economizar dados
+    getController.abort();
+
+    if (resolvedUrl && resolvedUrl !== url) {
+      console.log('[UrlResolver] Redirecionamento resolvido via GET:', resolvedUrl);
+      return resolvedUrl;
+    }
+  } catch (error) {
+    console.error('[UrlResolver] Erro ao resolver redirecionamento do vídeo:', error);
+  }
+
+  return url;
+}
+

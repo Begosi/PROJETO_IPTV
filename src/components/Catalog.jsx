@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Search, Loader2, Play, Tv } from 'lucide-react';
 import Hls from 'hls.js';
 import mpegts from 'mpegts.js';
+import localforage from 'localforage';
 import { XtreamService } from '../services/xtream';
-import { getProxiedUrl, isElectron } from '../utils/url';
+import { getProxiedUrl, isElectron, resolveRedirect } from '../utils/url';
 import './Catalog.css';
 
 const BRANDS = [
@@ -104,6 +105,27 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
 
         // 2. Se for VOD ou Séries, adicionar plataformas virtuais e a categoria TODOS
         if (type === 'vod' || type === 'series') {
+          let cwList = [];
+          try {
+            cwList = await localforage.getItem(`continue_watching_${listId}_${type}`) || [];
+          } catch(e) {}
+
+          const continueCat = cwList.length > 0 ? {
+            category_id: 'virtual_continue_watching',
+            category_name: '⏱️ CONTINUE ASSISTINDO',
+            isVirtual: true,
+            items: cwList.map(c => ({
+              ...(c.stream_obj || {}),
+              stream_id: c.stream_obj?.stream_id || (c.type === 'vod' ? c.id : undefined),
+              series_id: c.stream_obj?.series_id,
+              id: c.id,
+              name: c.stream_obj?.name || c.title,
+              stream_icon: c.stream_icon || c.stream_obj?.stream_icon || c.stream_obj?.cover,
+              cw_progress: c.progress,
+              cw_duration: c.duration
+            }))
+          } : null;
+
           const virtualCats = [];
           BRANDS.forEach(brand => {
             let hasContent = false;
@@ -136,7 +158,7 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
             isAll: true
           };
 
-          uniqueCats = [allCat, ...virtualCats, ...uniqueCats];
+          uniqueCats = [allCat, ...(continueCat ? [continueCat] : []), ...virtualCats, ...uniqueCats];
         }
 
         setCategories(uniqueCats);
@@ -179,6 +201,9 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
               }
             });
             if (active) setStreams(allItems);
+          } else if (activeCategoryId === 'virtual_continue_watching') {
+            const cat = categories.find(c => c.category_id === activeCategoryId);
+            if (active) setStreams(cat ? cat.items : []);
           } else if (typeof activeCategoryId === 'string' && activeCategoryId.startsWith('virtual_')) {
             const brandQuery = activeCategoryId.replace('virtual_', '');
             const allItems = [];
@@ -208,6 +233,9 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
             const allStreams = cachedStreamsObj.data;
             if (activeCategoryId === 'all_contents') {
               if (active) setStreams(allStreams);
+            } else if (activeCategoryId === 'virtual_continue_watching') {
+              const cat = categories.find(c => c.category_id === activeCategoryId);
+              if (active) setStreams(cat ? cat.items : []);
             } else if (typeof activeCategoryId === 'string' && activeCategoryId.startsWith('virtual_')) {
               const brandQuery = activeCategoryId.replace('virtual_', '');
               const matchingCatIds = categories
@@ -225,6 +253,9 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
             if (activeCategoryId === 'all_contents') {
               const data = await xtreamService.getStreams(type);
               if (active) setStreams(data || []);
+            } else if (activeCategoryId === 'virtual_continue_watching') {
+              const cat = categories.find(c => c.category_id === activeCategoryId);
+              if (active) setStreams(cat ? cat.items : []);
             } else if (typeof activeCategoryId === 'string' && activeCategoryId.startsWith('virtual_')) {
               const brandQuery = activeCategoryId.replace('virtual_', '');
               const matchingCats = categories.filter(cat => 
@@ -282,7 +313,7 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
 
   const getStreamUrl = (stream) => {
     let streamUrl = stream.direct_url;
-    let id = stream.stream_id || stream.series_id || stream.num;
+    let id = stream.stream_id || stream.series_id || stream.num || stream.id;
 
     if (activeList.type === 'xtream') {
       const ext = stream.container_extension;
@@ -293,10 +324,12 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
 
   const handleFullscreenPlay = (stream) => {
     onPlay({
-      id: stream.stream_id || stream.series_id || stream.num,
+      id: stream.stream_id || stream.series_id || stream.num || stream.id,
       title: stream.name,
       url: getStreamUrl(stream),
-      type: type
+      type: type,
+      stream: stream,
+      listId: activeList.id
     });
   };
 
@@ -422,11 +455,16 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
                       }
                     }}
                   >
-                    <div className="stream-poster">
+                    <div className="stream-poster" style={{ position: 'relative' }}>
                       {(stream.stream_icon || stream.cover) ? (
                         <img src={stream.stream_icon || stream.cover} alt={stream.name} loading="lazy" />
                       ) : (
                         <div className="no-poster"><Play size={32} /></div>
+                      )}
+                      {stream.cw_progress && stream.cw_duration && (
+                        <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '4px', background: 'rgba(0,0,0,0.6)', zIndex: 2 }}>
+                          <div style={{ width: `${Math.min((stream.cw_progress / stream.cw_duration) * 100, 100)}%`, height: '100%', background: 'var(--primary)' }}></div>
+                        </div>
                       )}
                     </div>
                     <div className="stream-info">
@@ -531,7 +569,13 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
                           id: episode.id,
                           title: `${activeSeriesInfo.info?.name} - S${selectedSeason}E${episode.episode_num} - ${episode.title || `Episódio ${episode.episode_num}`}`,
                           url: xtreamService.buildStreamUrl('series', episode.id, episode.container_extension),
-                          type: 'series'
+                          type: 'series',
+                          stream: {
+                            ...episode,
+                            stream_icon: activeSeriesInfo.info?.cover || activeSeriesInfo.info?.stream_icon,
+                            name: `${activeSeriesInfo.info?.name} - S${selectedSeason}E${episode.episode_num}`
+                          },
+                          listId: activeList.id
                         });
                       }}
                     >
@@ -679,7 +723,18 @@ function LivePreviewPlayer({ url, title, onExpand }) {
           });
           setIsLoading(false);
         } else {
-          video.src = getProxiedUrl(url);
+          let playUrl = getProxiedUrl(url);
+          if (playUrl.startsWith('http://')) {
+            try {
+              const resolved = await resolveRedirect(playUrl);
+              if (resolved) {
+                playUrl = resolved;
+              }
+            } catch (err) {
+              console.error('Erro ao resolver redirecionamento da prévia:', err);
+            }
+          }
+          video.src = playUrl;
           video.addEventListener('loadedmetadata', () => {
             setIsLoading(false);
             video.play().catch(() => {});
@@ -690,6 +745,7 @@ function LivePreviewPlayer({ url, title, onExpand }) {
           });
         }
       } catch (err) {
+        console.error('Erro na inicialização do player:', err);
         setError('Erro na inicialização do player');
         setIsLoading(false);
       }
