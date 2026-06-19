@@ -4,7 +4,7 @@ import localforage from 'localforage';
 import { detectBestConnectionMode } from '../utils/url';
 import './Dashboard.css';
 
-export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList }) {
+export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList, onPlay }) {
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [counts, setCounts] = useState({ live: null, vod: null, series: null });
   const [isLoadingCounts, setIsLoadingCounts] = useState(true);
