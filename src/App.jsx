@@ -100,76 +100,103 @@ function App() {
     );
   }
 
+  const getGreeting = () => {
+    const hour = new Date().getHours();
+    if (hour < 12) return 'Bom dia';
+    if (hour < 18) return 'Boa tarde';
+    return 'Boa noite';
+  };
+
   return (
     <div className="container">
       <header className="app-header">
+        <span className="greeting-text">{getGreeting()}!</span>
         <img src="/orbita-logo.png" alt="ÓRBITA IPTV" style={{ height: '80px', objectFit: 'contain', marginBottom: '1rem' }} />
         <p className="app-subtitle">Seu reprodutor de mídia premium</p>
       </header>
 
       <main>
+        <div className="info-banner">
+          <strong>Dica:</strong> Toque em uma de suas listas abaixo para carregar o conteúdo ou adicione uma nova lista para começar.
+        </div>
+
         <section className="glass-panel" style={{ padding: '2rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-            <h2>Minhas Listas</h2>
+          <div className="lists-header">
+            <h2 style={{ margin: 0 }}>Minhas Listas</h2>
             <button className="btn-primary" onClick={() => setIsModalOpen(true)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <Plus size={20} />
-              Nova Lista
+              Adicionar Lista
             </button>
           </div>
 
           <div className="lists-grid">
             {lists.length === 0 ? (
-              <div className="glass-card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', gridColumn: '1 / -1' }}>
-                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'rgba(99, 102, 241, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Tv size={30} color="var(--primary)" />
+              <div className="glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', gridColumn: '1 / -1', border: '1px dashed var(--primary)' }}>
+                <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(99, 102, 241, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Tv size={32} color="var(--primary)" />
                 </div>
                 <div style={{ textAlign: 'center' }}>
                   <h3>Nenhuma Lista Encontrada</h3>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-                    Adicione uma lista M3U ou Xtream Codes para começar a assistir.
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginTop: '0.5rem', maxWidth: '400px' }}>
+                    Sua biblioteca está vazia. Adicione uma nova lista no formato M3U ou Xtream Codes para explorar seus canais, filmes e séries.
                   </p>
                 </div>
+                <button className="btn-primary" onClick={() => setIsModalOpen(true)} style={{ marginTop: '1rem' }}>
+                  Adicionar Agora
+                </button>
               </div>
             ) : (
               lists.map((list) => (
                 <div 
                   key={list.id} 
                   className="glass-card" 
-                  style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}
+                  style={{ 
+                    padding: '1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', 
+                    background: 'linear-gradient(145deg, rgba(30, 34, 45, 0.6) 0%, rgba(20, 22, 30, 0.8) 100%)' 
+                  }}
                   onClick={() => setActiveList(list)}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(99, 102, 241, 0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <Play size={20} color="var(--primary)" />
-                      </div>
-                      <div>
-                        <h3 style={{ fontSize: '1.1rem' }}>{list.name}</h3>
-                        <span style={{ fontSize: '0.8rem', color: 'var(--secondary)', textTransform: 'uppercase', fontWeight: 'bold' }}>{list.type}</span>
-                      </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', overflow: 'hidden' }}>
+                    <div style={{ 
+                      width: '48px', height: '48px', borderRadius: '12px', flexShrink: 0,
+                      background: list.type === 'xtream' ? 'linear-gradient(135deg, var(--primary) 0%, #a855f7 100%)' : 'linear-gradient(135deg, var(--secondary) 0%, #3b82f6 100%)', 
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      boxShadow: '0 4px 10px rgba(0,0,0,0.3)'
+                    }}>
+                      <Play size={24} color="#fff" fill="#fff" />
                     </div>
-                    <div style={{ display: 'flex', gap: '0.5rem', zIndex: 2 }}>
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setEditingList(list);
-                          setIsModalOpen(true);
-                        }}
-                        style={{ color: 'var(--text-secondary)', padding: '0.25rem' }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = 'var(--primary)'}
-                        onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
-                      >
-                        <Pencil size={18} />
-                      </button>
-                      <button 
-                        onClick={(e) => handleDeleteList(e, list.id)}
-                        style={{ color: 'var(--text-secondary)', padding: '0.25rem' }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = 'var(--danger)'}
-                        onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
-                      >
-                        <Trash2 size={18} />
-                      </button>
+                    <div style={{ overflow: 'hidden' }}>
+                      <h3 style={{ fontSize: '1.1rem', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{list.name}</h3>
+                      <span style={{ 
+                        fontSize: '0.75rem', 
+                        color: list.type === 'xtream' ? '#c084fc' : '#6ee7b7', 
+                        fontWeight: '700', letterSpacing: '0.5px'
+                      }}>
+                        {list.type === 'xtream' ? 'XTREAM CODES' : 'M3U PLAYLIST'}
+                      </span>
                     </div>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.25rem', zIndex: 2, flexShrink: 0 }}>
+                    <button 
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setEditingList(list);
+                        setIsModalOpen(true);
+                      }}
+                      style={{ color: 'var(--text-secondary)', padding: '0.5rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--primary)'; e.currentTarget.style.background = 'rgba(99, 102, 241, 0.1)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; }}
+                    >
+                      <Pencil size={18} />
+                    </button>
+                    <button 
+                      onClick={(e) => handleDeleteList(e, list.id)}
+                      style={{ color: 'var(--text-secondary)', padding: '0.5rem', borderRadius: '8px', background: 'rgba(255,255,255,0.05)' }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--danger)'; e.currentTarget.style.background = 'rgba(239, 68, 68, 0.1)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; }}
+                    >
+                      <Trash2 size={18} />
+                    </button>
                   </div>
                 </div>
               ))

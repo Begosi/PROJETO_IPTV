@@ -273,10 +273,12 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
           <div className="card-icon">
             <Tv size={64} />
           </div>
-          <h2>TV AO VIVO</h2>
-          <span className="card-count-label">
-            {isLoadingCounts ? 'Carregando...' : `${counts.live || 0} canais`}
-          </span>
+          <div>
+            <h2>TV AO VIVO</h2>
+            <span className="card-count-label">
+              {isLoadingCounts ? 'Carregando...' : `${counts.live || 0} canais`}
+            </span>
+          </div>
           <button className="card-action">Assistir</button>
         </div>
 
@@ -284,10 +286,12 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
           <div className="card-icon">
             <Film size={64} />
           </div>
-          <h2>FILMES</h2>
-          <span className="card-count-label">
-            {isLoadingCounts ? 'Carregando...' : `${counts.vod || 0} títulos`}
-          </span>
+          <div>
+            <h2>FILMES</h2>
+            <span className="card-count-label">
+              {isLoadingCounts ? 'Carregando...' : `${counts.vod || 0} títulos`}
+            </span>
+          </div>
           <button className="card-action">Assistir</button>
         </div>
 
@@ -295,10 +299,12 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
           <div className="card-icon">
             <Clapperboard size={64} />
           </div>
-          <h2>SÉRIES</h2>
-          <span className="card-count-label">
-            {isLoadingCounts ? 'Carregando...' : `${counts.series || 0} séries`}
-          </span>
+          <div>
+            <h2>SÉRIES</h2>
+            <span className="card-count-label">
+              {isLoadingCounts ? 'Carregando...' : `${counts.series || 0} séries`}
+            </span>
+          </div>
           <button className="card-action">Assistir</button>
         </div>
       </div>

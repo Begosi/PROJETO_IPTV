@@ -2,6 +2,16 @@
 .app-header {
   margin-bottom: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting-text {
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .app-title {
@@ -18,9 +28,48 @@
   font-size: 1.1rem;
 }
 
+.info-banner {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.lists-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
 .lists-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .app-header img {
+    height: 60px !important;
+  }
+  .app-title {
+    font-size: 2rem;
+  }
+  .lists-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .lists-header h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .lists-grid {
+    grid-template-columns: 1fr;
+  }
 }

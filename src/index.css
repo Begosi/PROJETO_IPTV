@@ -122,3 +122,22 @@ input:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  button {
+    min-height: 44px; /* Better touch target */
+  }
+
+  .btn-primary {
+    width: 100%; /* Full width buttons on mobile */
+    text-align: center;
+    justify-content: center;
+    padding: 14px 24px;
+  }
+}
