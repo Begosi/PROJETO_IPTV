@@ -1,5 +1,5 @@
 {
-  "name": "projeto-portaliptv",
+  "name": "orbita-iptv",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,7 +15,7 @@
   },
   "build": {
     "appId": "com.portaliptv.app",
-    "productName": "Portal IPTV",
+    "productName": "ÓRBITA IPTV",
     "win": {
       "target": "nsis",
       "publish": null

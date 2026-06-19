@@ -241,7 +241,7 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList })
     <div className="dashboard-container">
       <header className="dashboard-header">
         <div className="header-brand">
-          <h1 className="brand-title">PORTAL <span>IPTV</span></h1>
+          <img src="/orbita-logo.png" alt="ÓRBITA IPTV" style={{ height: '40px', objectFit: 'contain' }} />
           <span className="current-date">{currentDate}</span>
         </div>
         <div className="header-actions" style={{ display: 'flex', gap: '1rem' }}>

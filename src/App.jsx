@@ -103,7 +103,7 @@ function App() {
   return (
     <div className="container">
       <header className="app-header">
-        <h1 className="app-title">Portal IPTV</h1>
+        <img src="/orbita-logo.png" alt="ÓRBITA IPTV" style={{ height: '80px', objectFit: 'contain', marginBottom: '1rem' }} />
         <p className="app-subtitle">Seu reprodutor de mídia premium</p>
       </header>
 

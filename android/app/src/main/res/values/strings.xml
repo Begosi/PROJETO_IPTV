@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Portal IPTV</string>
-    <string name="title_activity_main">Portal IPTV</string>
+    <string name="app_name">ÓRBITA IPTV</string>
+    <string name="title_activity_main">ÓRBITA IPTV</string>
     <string name="package_name">com.portaliptv.app</string>
     <string name="custom_url_scheme">com.portaliptv.app</string>
 </resources>
