@@ -6,7 +6,7 @@ import localforage from 'localforage';
 import { getProxiedUrl, isElectron, resolveRedirect } from '../utils/url';
 import './VideoPlayer.css';
 
-export function VideoPlayer({ url, title, onClose, id, type, stream, listId }) {
+export function VideoPlayer({ url, title, onClose, id, type, stream, listId, activeList, onPlay }) {
   const videoRef = useRef(null);
   const containerRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,6 +28,62 @@ export function VideoPlayer({ url, title, onClose, id, type, stream, listId }) {
       } catch (e) {
         console.error('Failed to toggle DevTools:', e);
       }
+    }
+  };
+
+  const handleNextEpisode = async () => {
+    if (type !== 'series' || !activeList || activeList.type !== 'xtream' || !stream || !stream.series_id) {
+      return;
+    }
+    try {
+      setIsLoading(true);
+      const { XtreamService } = await import('../services/xtream.js');
+      const xtreamService = new XtreamService(activeList.url, activeList.username, activeList.password);
+      const info = await xtreamService.getSeriesInfo(stream.series_id);
+      if (!info || !info.episodes) {
+        setIsLoading(false);
+        return;
+      }
+      
+      let foundNext = null;
+      let foundCurrent = false;
+      const seasons = Object.keys(info.episodes).sort((a,b) => Number(a) - Number(b));
+      
+      for (const season of seasons) {
+        const episodes = info.episodes[season];
+        for (let i = 0; i < episodes.length; i++) {
+          if (foundCurrent) {
+             foundNext = { episode: episodes[i], season };
+             break;
+          }
+          if (String(episodes[i].id) === String(id)) {
+             foundCurrent = true;
+          }
+        }
+        if (foundNext) break;
+      }
+
+      if (foundNext && onPlay) {
+        const nextEp = foundNext.episode;
+        onPlay({
+          id: nextEp.id,
+          title: `${info.info?.name} - S${foundNext.season}E${nextEp.episode_num} - ${nextEp.title || `Episódio ${nextEp.episode_num}`}`,
+          url: xtreamService.buildStreamUrl('series', nextEp.id, nextEp.container_extension),
+          type: 'series',
+          stream: {
+            ...nextEp,
+            stream_icon: info.info?.cover || info.info?.stream_icon,
+            name: `${info.info?.name} - S${foundNext.season}E${nextEp.episode_num}`,
+            series_id: stream.series_id
+          },
+          listId: activeList.id
+        });
+      } else {
+        setIsLoading(false);
+      }
+    } catch (err) {
+      console.error('Failed to auto-play next episode:', err);
+      setIsLoading(false);
     }
   };
 
@@ -258,6 +314,12 @@ export function VideoPlayer({ url, title, onClose, id, type, stream, listId }) {
               if (newList.length !== cwList.length) {
                 await localforage.setItem(key, newList);
               }
+              const watchedKey = `watched_${listId}_${type}`;
+              let watchedList = await localforage.getItem(watchedKey) || [];
+              if (!watchedList.includes(id)) {
+                watchedList.push(id);
+                await localforage.setItem(watchedKey, watchedList);
+              }
             } else {
               const idx = cwList.findIndex(item => item.id === id);
               const watchItem = {
@@ -382,6 +444,7 @@ export function VideoPlayer({ url, title, onClose, id, type, stream, listId }) {
         onPause={() => setIsPlaying(false)}
         onWaiting={() => setIsLoading(true)}
         onPlaying={() => setIsLoading(false)}
+        onEnded={handleNextEpisode}
         onClick={togglePlay}
         autoPlay
       />

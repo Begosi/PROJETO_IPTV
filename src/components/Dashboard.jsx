@@ -179,9 +179,9 @@ export function Dashboard({ activeList, onLogout, onSelectType, onRefreshList, o
         const service = new XtreamService(activeList.url, activeList.username, activeList.password);
         let streamUrl = '';
         if (item.type === 'vod') {
-          streamUrl = await service.getVodStreamUrl(item.id, item.stream_obj?.container_extension);
+          streamUrl = service.buildStreamUrl('vod', item.id, item.stream_obj?.container_extension);
         } else if (item.type === 'series') {
-          streamUrl = await service.getSeriesStreamUrl(item.id, item.stream_obj?.container_extension);
+          streamUrl = service.buildStreamUrl('series', item.id, item.stream_obj?.container_extension);
         }
         onPlay({ 
           url: streamUrl, 

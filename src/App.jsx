@@ -72,6 +72,8 @@ function App() {
         type={activeVideo.type}
         stream={activeVideo.stream}
         listId={activeVideo.listId}
+        activeList={activeList}
+        onPlay={(videoObj) => setActiveVideo(videoObj)}
         onClose={() => setActiveVideo(null)} 
       />
     );

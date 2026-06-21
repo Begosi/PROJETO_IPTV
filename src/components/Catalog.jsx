@@ -33,6 +33,21 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
   const [activeSeriesInfo, setActiveSeriesInfo] = useState(null);
   const [isLoadingSeriesInfo, setIsLoadingSeriesInfo] = useState(false);
   const [selectedSeason, setSelectedSeason] = useState(null);
+  const [watchedItems, setWatchedItems] = useState([]);
+
+  useEffect(() => {
+    const loadWatched = async () => {
+      if (!activeList) return;
+      try {
+        const vodWatched = await localforage.getItem(`watched_${activeList.id}_vod`) || [];
+        const seriesWatched = await localforage.getItem(`watched_${activeList.id}_series`) || [];
+        setWatchedItems([...vodWatched, ...seriesWatched]);
+      } catch (e) {
+        console.error('Failed to load watched items', e);
+      }
+    };
+    loadWatched();
+  }, [activeList, type]);
 
   const handleSelectSeries = async (series) => {
     setIsLoadingSeriesInfo(true);
@@ -466,6 +481,11 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
                           <div style={{ width: `${Math.min((stream.cw_progress / stream.cw_duration) * 100, 100)}%`, height: '100%', background: 'var(--primary)' }}></div>
                         </div>
                       )}
+                      {watchedItems.includes(stream.stream_id || stream.series_id || stream.id) && (
+                        <div style={{ position: 'absolute', top: 8, right: 8, background: 'rgba(34,197,94,0.9)', color: 'white', padding: '2px 8px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: 'bold', zIndex: 3 }}>
+                          Assistido
+                        </div>
+                      )}
                     </div>
                     <div className="stream-info">
                       <h3>{stream.name}</h3>
@@ -573,7 +593,8 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
                           stream: {
                             ...episode,
                             stream_icon: activeSeriesInfo.info?.cover || activeSeriesInfo.info?.stream_icon,
-                            name: `${activeSeriesInfo.info?.name} - S${selectedSeason}E${episode.episode_num}`
+                            name: `${activeSeriesInfo.info?.name} - S${selectedSeason}E${episode.episode_num}`,
+                            series_id: activeSeriesInfo?.info?.series_id || activeSeriesInfo?.info?.id || stream?.series_id || stream?.id
                           },
                           listId: activeList.id
                         });
@@ -586,6 +607,11 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
                           <span className="episode-duration">Duração: {episode.info.duration}</span>
                         )}
                       </div>
+                      {watchedItems.includes(episode.id) && (
+                        <div style={{ background: 'rgba(34,197,94,0.9)', color: 'white', padding: '2px 8px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', marginLeft: 'auto', marginRight: '10px' }}>
+                          Assistido
+                        </div>
+                      )}
                       <button className="episode-play-btn">
                         <Play size={16} fill="white" />
                         Assistir
