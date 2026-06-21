@@ -53,7 +53,8 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
     setIsLoadingSeriesInfo(true);
     setError(null);
     try {
-      const info = await xtreamService.getSeriesInfo(series.series_id);
+      const info = await xtreamService.getSeriesInfo(series.series_id || series.id);
+      info._series_id = series.series_id || series.id;
       setActiveSeriesInfo(info);
       
       // Achar a primeira temporada disponível
@@ -594,7 +595,7 @@ export function Catalog({ activeList, type, onBack, onPlay }) {
                             ...episode,
                             stream_icon: activeSeriesInfo.info?.cover || activeSeriesInfo.info?.stream_icon,
                             name: `${activeSeriesInfo.info?.name} - S${selectedSeason}E${episode.episode_num}`,
-                            series_id: activeSeriesInfo?.info?.series_id || activeSeriesInfo?.info?.id || stream?.series_id || stream?.id
+                            series_id: activeSeriesInfo?._series_id || activeSeriesInfo?.info?.series_id || activeSeriesInfo?.info?.id
                           },
                           listId: activeList.id
                         });
